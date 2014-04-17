@@ -27,6 +27,10 @@ Added an update method on message socket.
 Added user role for auth levels.
 
 Added audit trial for delete messages (messageaudit collection).
+## Notes ##
+see assets/styles/importer.less to reference other .less files
+
+see tasks/pipeline.js to reference other .js files
 ## To do ##
 bring over concepts developed in crmMeans. [https://github.com/johntom/crmMeans] (https://github.com/johntom/crmMeans).
 
