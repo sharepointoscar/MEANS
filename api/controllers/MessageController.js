@@ -1,0 +1,103 @@
+var _ = require('lodash');
+
+module.exports = {
+	getAll: function(req, res) {
+		Message.getAll()
+		.spread(function(models) {
+			Message.watch(req);
+			Message.subscribe(req.socket, models);
+
+			res.json(models);
+		})
+		.fail(function(err) {
+			// An error occured
+		});
+	},
+
+	getOne: function(req, res) {
+		Message.getOne(req.param('id'))
+		.spread(function(model) {
+			Message.subscribe(req.socket, model);
+			res.json(model);
+		})
+		.fail(function(err) {
+			res.send(404);
+		});
+	},
+
+	create: function (req, res) {
+		var userId = req.param('user');
+		var model = {
+			title: req.param('title'),
+            cardate:req.param('cardate'),
+            cartime:req.param('cartime'),
+			user: userId
+           // , cars:req.param('cars')
+
+		};
+
+		Message.create(model)
+		.done(function(err, message) {
+			if (err) {
+				return console.log(err);
+			}
+			else {
+				Message.publishCreate(message);
+				res.json(message);
+			}
+		});
+	},
+
+	destroy: function (req, res) {
+		var id = req.param('id');
+		if (!id) {
+			return res.badRequest('No id provided.');
+		}
+
+		// Otherwise, find and destroy the model in question
+		Message.findOne(id).done(function(err, model) {
+			if (err) {
+				return res.serverError(err);
+			}
+			if (!model) {
+				return res.notFound();
+			}
+
+            // create an audit trail
+            Messageaudit.create(model)
+                .done(function (err, message) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                    else {
+
+                    }
+                });
+
+
+			Message.destroy(id, function(err) {
+				if (err) {
+					return res.serverError(err);
+				}
+
+				Message.publishDestroy(model.id);
+				return res.json(model);
+			});
+		});
+	},
+    // added by jrt
+    update: function (req, res, next) {
+
+        var id = req.param("id");
+        var title = req.param("title");
+        console.log('in update', title, id)
+        if (title && req.isSocket) {
+            Message.update(id, {title: title}).exec(function update(err, updated) {
+                Message.publishUpdate(updated[0].id,{ title:updated[0].title });
+
+            })
+        }
+    }
+
+
+};

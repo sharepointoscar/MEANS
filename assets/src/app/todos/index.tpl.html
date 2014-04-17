@@ -1,0 +1,46 @@
+<h2>Todo's</h2>
+<p>Open this page in two browsers and see how easy Sails.js makes realtime applications!</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <form role="form" ng-submit="createTodo(newTodo)">
+            <div class="form-group">
+                <label for="todoTitle">Your Todo</label>
+                <input type="text" ng-model="newTodo.title" class="form-control" id="todoTitle" >
+            </div>
+            <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+            <button type="submit" class="btn btn-primary" ng-disabled="!currentUser" >Submit
+            </button>
+        </form>
+    </div>
+    <div class="col-md-8">
+        <h3>All Todos</h3>
+        <ul>
+            <li ng-repeat="todo in todos">{{todo.title}} <b>by</b> {{todo.user.username }}, <span am-time-ago="todo.updatedAt"></span> - <button type="button" class="btn btn-danger btn-xs" ng-click="destroyTodo(todo)"><i class="fa fa-trash-o"></i></button></li>
+        </ul>
+    </div>
+    <div class="col-md-12">
+        <h1>ng-table</h1>
+        <button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
+        <p><strong>Sorting:</strong> {{tableParams.sorting()|json}}
+
+        <table ng-table="tableParams" class="table">
+            <tr ng-repeat="todo in  $data">
+
+                <td data-title="'title'" sortable="'title'">
+                    <span ng-class="{ 'fa fa-info-circle': todo.title == '666','fa fa-dot-circle-o': todo.title != '666' }">{{ todo.title}}</span>
+                </td>
+                <td  data-title="'isComplete'" sortable="'isComplete'">
+                    {{todo.isComplete }}
+                </td>
+
+                <td data-title="'delete'">
+                    <button type="button" class="btn btn-danger btn-xs" ng-click="destroyTodo(todo)"
+                            ng-show="currentUser.id === todo.user.id"><i class="fa fa-trash-o"></i></button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
