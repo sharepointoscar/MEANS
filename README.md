@@ -28,7 +28,7 @@ Added user role for auth levels.
 
 Added audit trial for delete messages (messageaudit collection).
 ## To do ##
-bring over concepts developed in crmMeans. [https://github.com/johntom/crmMeans] ([https://github.com/johntom/crmMeans]).
+bring over concepts developed in crmMeans. [https://github.com/johntom/crmMeans] (https://github.com/johntom/crmMeans).
 
 ## To get up and running ##
 You will need to have Sails v0.10 installed on your machine (sudo npm install sails@beta -g) and then clone the repo, cd into the project directory and run.
@@ -39,7 +39,8 @@ You will need to have Sails v0.10 installed on your machine (sudo npm install sa
     $ sails lift
 
 Check it out at [http://localhost:1337](http://localhost:1337).
-
+Angular Sails wraps the native sails.js REST functions. For further information check out
+[the sails docs](http://sailsjs.org/#!documentation/sockets) and [Mike's Screencast](http://www.youtube.com/watch?v=GK-tFvpIR7c)
 ## Screenshots ##
 
 ![Messages](https://github.com/johntom/sailng/raw/master/screenshots/sailng-messages.png)
