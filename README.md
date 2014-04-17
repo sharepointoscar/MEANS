@@ -7,7 +7,12 @@ It demonstrates how to create simple chat messages, update the page and delete a
 Current features include: a modular angular js architecture and file structure, an example of how to include services and directives from bower (lodash, angular-moment), and authentication using PassportJs.
 
 More features are planned like i18n, plus I might modify the Gruntfile to run jshint and karma test runner on file saves.
-parent repo: https://github.com/ryancp/sailng/tree/master/api
+
+# Credits #
+https://github.com/ryancp/sailng
+
+https://github.com/kyjan/angular-sails
+
 # Sailng Fork by jrt@gtz.com #
 https://github.com/johntom/sailng.
 
@@ -23,7 +28,7 @@ Added user role for auth levels.
 
 Added audit trial for delete messages (messageaudit collection).
 ## To do ##
-bring over concepts developed in crmMeans.
+bring over concepts developed in crmMeans. [https://github.com/johntom/crmMeans] ([https://github.com/johntom/crmMeans]).
 
 ## To get up and running ##
 You will need to have Sails v0.10 installed on your machine (sudo npm install sails@beta -g) and then clone the repo, cd into the project directory and run.
