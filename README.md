@@ -26,6 +26,19 @@ Added an update method on message socket.
 
 Added user role for auth levels.
 
+note: must hard code role field after user is created (I use robomongo). 
+
+a value of 4 will allow update on socket in todo
+{
+    "username" : "test",
+    "email" : "test@gtz.com",
+    "first_name" : "Test",
+    "createdAt" : ISODate("2014-04-18T04:54:59.671Z"),
+    "updatedAt" : ISODate("2014-04-18T04:54:59.671Z"),
+    "role" : 4,
+    "_id" : ObjectId("5350b0232980eb0000ff8f38")
+}
+
 Added audit trial for delete messages (messageaudit collection).
 ## Notes ##
 see assets/styles/importer.less to reference other .less files
