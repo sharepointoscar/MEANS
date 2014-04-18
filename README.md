@@ -28,9 +28,9 @@ Added an update method on message socket.
 
 Added user role for auth levels.
 
-note: must hard code role field after user is created (I use robomongo). 
+note: I forgot to add role so you must hard after user is created (I use robomongo). 
 
-a value of 4 will allow update on socket in todo
+a value of 4 will allow update on socket in messages
 {
     "username" : "test",
     "email" : "test@gtz.com",
