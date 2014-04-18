@@ -18,6 +18,8 @@ https://github.com/johntom/sailng.
 
 Added mongodb support (use   "sails-mongo": "0.10.0-rc2" and not -rc3 as there is a problem }.
 
+This problem is only if you have existing users created under rc2 and then update to rc3 so you can install either for a blank database
+
 Added ng-table.js for table ui magic (see todo).
 
 Added a todo view which helps clear up some naming confusion I had with sails 0.10 and sockets.
