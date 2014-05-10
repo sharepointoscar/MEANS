@@ -141,7 +141,6 @@ var AuthController = {
         // Upon successful login, send the user to the homepage were req.user
         // will available.
         else {
-            // jrt
 
             console.log('===api/controllers/AuthController.js============================================');
             console.log('currently logged in user is: ' + req.user.username);
@@ -151,6 +150,9 @@ var AuthController = {
             console.log('currently logged in user  req.session.authenticated : ' + req.session.authenticated);
             console.log('================================================================================');
             console.log('================================================================================');
+
+        	console.log('currently logged in user is: ' + req.user.username);
+
           res.redirect('/');
         }
       });

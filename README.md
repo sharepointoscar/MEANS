@@ -1,6 +1,6 @@
-# SailngMongo #
+# Sailng #
 
-SailngMongo is a boilerplate that gives you a great foundation to start building realtime, Angular-based, single page applications. this is based on git://github.com/ryancp/sailng.git
+Sailng is a boilerplate that gives you a great foundation to start building realtime, Angular-based, single page applications.
 
 It demonstrates how to create simple chat messages, update the page and delete a message all without a refresh. Go ahead and sign in with a couple different users in multiple browsers to see how it all works.
 

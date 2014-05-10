@@ -40,6 +40,7 @@ angular.module( 'sailng', [
 	$locationProvider.html5Mode(true);
 }])
 
+
 .run( function run () {
 	moment.lang('en');
 })

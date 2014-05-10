@@ -97,8 +97,7 @@ module.exports = {
             date2: cd1,
             date3: cd2,
             status: req.param('status'),
-            user: userId
-            // , cars:req.param('cars')
+            user: userId     
 
         };
         console.log('in create', model)

@@ -14,13 +14,12 @@ module.exports = {
 		},
 		first_name: {
 			type: 'string',
-			required: true
+			required: false
 		},
         role: {
             type: 'INTEGER',
             required: false
         },
-
 
 		message_count: {
 			type: 'number'

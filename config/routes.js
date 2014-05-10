@@ -21,6 +21,7 @@
 
 module.exports.routes = {
 
+
     /**
      * We set the default language for all routes
      * **/
@@ -37,23 +38,14 @@ module.exports.routes = {
     action: 'index'
   },
 
-
-  'GET /login': 'AuthController.login',
-  'GET /logout': 'AuthController.logout',
-  'GET /register': 'AuthController.register',
+  'get /login': 'AuthController.login',
+  'get /logout': 'AuthController.logout',
+  'get /register': 'AuthController.register',
 
   'post /auth/local': 'AuthController.callback',
   'post /auth/local/:action': 'AuthController.callback',
-  'post /auth/google': 'AuthController.callback',
-  'post /auth/google/:action': 'AuthController.callback',
 
-//
-//   'GET /auth/auth': 'AuthController.register',
-//
-//    'post /auth/facebook': 'AuthController.callback',
-//    'post /auth/facebook/:action': 'AuthController.callback',
 
-//    app.post('/auth/openid', passport.authenticate('openid'));
   // Custom routes here...
 
     /**
