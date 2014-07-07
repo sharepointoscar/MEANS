@@ -23,7 +23,6 @@ var fontFilesToInject = [
     'bower_components/fontawesome/fonts/*'
 ];
 
-//console.log('im ;',imagesFilesToInject);
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
@@ -47,7 +46,6 @@ var jsFilesToInject = [
     //
     // All of the rest of your app scripts
     'src/**/*.js'
-
 
 ];
 var imagesFilesToInject = [
