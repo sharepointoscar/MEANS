@@ -21,4 +21,4 @@ Check it out at [http://localhost:1337](http://localhost:1337)
 
 ## Screenshots ##
 
-![Messages](https://github.com/SharePointOscar/means/raw/master/images/screenshots/sailng-app.png)
+![Messages](https://github.com/SharePointOscar/MEANS/blob/master/assets/images/screenshots/sailng-app.png)
