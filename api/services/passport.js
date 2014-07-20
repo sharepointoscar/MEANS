@@ -67,18 +67,23 @@ passport.connect = function (req, query, profile, next) {
     , config     = strategies[profile.provider]
     , user       = {};
 
-  // Set the authentication provider.
-  query.provider = req.param('provider');
+    // Set the authentication provider.
+    query.provider = req.param('provider');
 
-  // If the profile object contains a list of emails, grab the first one and
-  // add it to the user.
-  if (profile.hasOwnProperty('emails')) {
+    // If the profile object contains a list of emails, grab the first one and
+    // add it to the user.
+    if (profile.hasOwnProperty('emails')) {
     user.email = profile.emails[0].value;
-  }
-  // If the profile object contains a username, add it to the user.
-  if (profile.hasOwnProperty('username')) {
+    }
+
+    // If the profile object contains a username, add it to the user.
+    if (profile.hasOwnProperty('username')) {
     user.username = profile.username;
-  }
+    }
+
+    if (profile.hasOwnProperty('displayName')) {
+        user.first_name = profile.displayName;
+    }
 
   // If neither an email or a username was available in the profile, we don't
   // have a way of identifying the user in the future. Throw an error and let
@@ -281,8 +286,7 @@ passport.loadStrategies = function (req) {
 };
 
 passport.serializeUser(function (user, next) {
-   // console.log('serializeUser ',user)
-  next(null, user.id);
+      next(null, user.id);
 });
 
 passport.deserializeUser(function (id, next) {

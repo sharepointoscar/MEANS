@@ -153,7 +153,8 @@ var AuthController = {
 
         	console.log('currently logged in user is: ' + req.user.username);
 
-          res.redirect('/');
+
+          res.redirect('/home');
         }
       });
     });

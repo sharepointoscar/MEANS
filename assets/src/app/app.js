@@ -29,11 +29,13 @@ angular.module( 'sailng', [
      .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
 	// $urlRouterProvider.otherwise( '/home' );
 	$urlRouterProvider.otherwise(function ($injector, $location) {
+
 		if ($location.$$url === '/') {
 			window.location = '/home';
 		}
 		else {
 			// pass through to let the web server handle this request
+
 			window.location = $location.$$absUrl;
 		}
 	});
