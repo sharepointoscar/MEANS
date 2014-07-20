@@ -1,8 +1,8 @@
 # SailngMongo #
 
-SailngMongo is a boilerplate that gives you a great foundation to start building realtime, Angular-based, single page applications. this is based on git://github.com/ryancp/sailng.git
+MEANS is a boilerplate that gives you a great foundation to start building realtime, Angular-based, single page applications using SailsJS.
 
-It demonstrates how to create simple chat messages, update the page and delete a message all without a refresh. Go ahead and sign in with a couple different users in multiple browsers to see how it all works.
+It comes with sample real-time messages, update the page and delete a message all without a refresh. Go ahead and sign in with a couple different users in multiple browsers to see how it all works.
 
 Current features include: a modular angular js architecture and file structure, an example of how to include services and directives from bower (lodash, angular-moment), and authentication using PassportJs.
 
