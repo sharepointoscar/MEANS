@@ -30,7 +30,7 @@ module.exports = {
 			via: 'user'
 		},
 		passports : { collection: 'Passport', via: 'user' }
-        //,       "cars":'array'
+
 	},
 
 	getAll: function() {
