@@ -1,4 +1,4 @@
-# SailngMongo #
+# MEANS [ seed project ] #
 
 MEANS is a boilerplate that gives you a great foundation to start building realtime, Angular-based, single page applications using SailsJS.
 
@@ -21,4 +21,4 @@ Check it out at [http://localhost:1337](http://localhost:1337)
 
 ## Screenshots ##
 
-![Messages](https://github.com/ryancp/sailng/raw/master/screenshots/sailng-messages.png)
+![Messages](https://github.com/SharePointOscar/means/raw/master/images/screenshots/sailng-app.png)
