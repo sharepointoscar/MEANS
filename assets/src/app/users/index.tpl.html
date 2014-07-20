@@ -1,0 +1,36 @@
+<h2>users's</h2>
+
+<div class="row">
+
+
+    <div class="col-md-12">
+
+
+        <p><strong>Sorting:</strong> {{tableParams.sorting()|json}}
+
+        <table ng-table="tableParams" class="table">
+            <tr ng-repeat="user in  $data">
+
+
+                <td data-title="'username'" sortable="'username'">
+                    <span ng-class="{ 'fa fa-info-circle': user.title == '666','fa fa-dot-circle-o': user.username != '666' }"> {{ user.username}}</span>
+                </td>
+                <td  data-title="'email'" sortable="'email'">
+                    {{user.email }}
+                </td>
+
+                <td  data-title="'first_name'" sortable="'first_name'">
+                    {{user.first_name }}
+                </td>
+
+                <td  data-title="'role'" sortable="'role'">
+                    {{user.role }}
+                </td>
+
+
+            </tr>
+        </table>
+
+    </div>
+
+</div>

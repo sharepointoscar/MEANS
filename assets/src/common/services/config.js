@@ -1,6 +1,6 @@
 angular.module( 'services.config', ['lodash'])
 
-.service('config', function(lodash) {
+.service('config',['lodash', function(lodash) {
 
 	// private vars here if needed
 
@@ -13,4 +13,4 @@ angular.module( 'services.config', ['lodash'])
 		currentUser: false
 	};
 
-});
+}]);

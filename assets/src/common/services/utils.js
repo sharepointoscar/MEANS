@@ -1,6 +1,6 @@
 angular.module( 'services.utils', ['lodash'])
 
-.service('utils', function(lodash, config) {
+.service('utils', ['lodash', 'config', function(lodash, config) {
 
 	return {
 		prepareUrl: function(uriSegments) {
@@ -20,4 +20,4 @@ angular.module( 'services.utils', ['lodash'])
 
 	};
 
-});
+}]);

@@ -1,6 +1,6 @@
-angular.module('models.user', ['lodash', 'services', 'ngSails',])
+angular.module('models.user', ['lodash', 'services', 'ngSails'])
 
-.service('UserModel', function($q, lodash, utils, $sails) {
+.service('UserModel',['$q', 'lodash', 'utils', '$sails', function($q, lodash, utils, $sails) {
 	this.getAll = function() {
 		var deferred = $q.defer();
 		var url = utils.prepareUrl('user');
@@ -33,4 +33,4 @@ angular.module('models.user', ['lodash', 'services', 'ngSails',])
 
 		return deferred.promise;
 	};
-});
+}]);

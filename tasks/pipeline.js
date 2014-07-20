@@ -15,39 +15,47 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/**/*.css'
+    'styles/**/*.css'
 ];
 
+var fontFilesToInject = [
+    //'bower_components/fontawesome/fonts/fontawesome-webfont.woff'
+    'bower_components/fontawesome/fonts/*'
+];
 
+//console.log('im ;',imagesFilesToInject);
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
-  'bower_components/angular/angular.js',
-  'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-  'bower_components/angular-ui-router/release/angular-ui-router.js',
-  'bower_components/angular-ui-utils/modules/route/route.js',
-  'bower_components/socket.io-client/dist/socket.io.min.js',
-  'bower_components/sails.io.js/dist/sails.io.js',
-  'bower_components/angular-sails/dist/angular-sails.js',
-  'bower_components/lodash/dist/lodash.js',
-  'bower_components/moment/moment.js',
-  'bower_components/angular-moment/angular-moment.js',
-  'bower_components/angular-translate/angular-translate.js',
-  'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+    'bower_components/angular/angular.js',
+    'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+    'bower_components/angular-ui-router/release/angular-ui-router.js',
+    'bower_components/angular-ui-utils/modules/route/route.js',
+    'bower_components/socket.io-client/dist/socket.io.min.js',
+    'bower_components/sails.io.js/dist/sails.io.js',
+    'bower_components/angular-sails/dist/angular-sails.js',
+    'bower_components/lodash/dist/lodash.js',
+    'bower_components/moment/moment.js',
+    'bower_components/angular-moment/angular-moment.js',
+    'bower_components/angular-translate/angular-translate.js',
+    'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+    'bower_components/ng-table/ng-table.js',
+    'bower_components/jquery/dist/jquery.min.js',
+    'bower_components/bootstrap/dist/js/bootstrap.min.js',
+    //
+    // *->    you might put other dependencies like jQuery or Angular here   <-*
+    //
+    // All of the rest of your app scripts
+    'src/**/*.js'
 
-  'bower_components/ng-table/ng-table.js',
-     'bower_components/moment/min/moment.min.js',
 
-  //
-  // *->    you might put other dependencies like jQuery or Angular here   <-*
-  //
+];
+var imagesFilesToInject = [
+    'images/**/*'
 
-  // All of the rest of your app scripts
-  'src/**/*.js'
 ];
 
 module.exports.jsFilesToInjectNoPathChange = jsFilesToInject;
-
 
 // Client-side HTML templates are injected using the sources below
 // The ordering of these templates shouldn't matter.
@@ -58,9 +66,12 @@ module.exports.jsFilesToInjectNoPathChange = jsFilesToInject;
 // with the linker, no problem-- you'll just want to make sure the precompiled
 // templates get spit out to the same file.  Be sure and check out `tasks/README.md`
 // for information on customizing and installing new tasks.
+
+//modified by jrt tasks/config/copy.js
+
 var templateFilesToInject = [
-  // 'templates/**/*.html'
-  'src/**/*.tpl.html'
+    // 'templates/**/*.html'
+    'src/**/*.tpl.html'
 ];
 
 
@@ -68,11 +79,20 @@ var templateFilesToInject = [
 // (i.e. where the other Grunt tasks spit them out, or in some cases, where
 // they reside in the first place)
 module.exports.cssFilesToInject = cssFilesToInject.map(function(path) {
-  return '.tmp/public/' + path;
+    return '.tmp/public/' + path;
 });
 module.exports.jsFilesToInject = jsFilesToInject.map(function(path) {
-  return '.tmp/public/' + path;
+    return '.tmp/public/' + path;
 });
 module.exports.templateFilesToInject = templateFilesToInject.map(function(path) {
-  return 'assets/' + path;
+    return 'assets/' + path;
 });
+//jrt
+module.exports.imagesFilesToInject = imagesFilesToInject.map(function(path) {
+    return   path;
+});
+
+module.exports.fontFilesToInject = fontFilesToInject.map(function(path) {
+    return   path;
+});
+

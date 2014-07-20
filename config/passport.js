@@ -18,9 +18,8 @@ module.exports.passport = {
 
   // In case you wish to turn off local authentication, simply
   // set this to false and remove any related routes and endpoints.
-  local: true/*,
-
-  twitter: {
+  local: true,
+    twitter: {
     name: 'Twitter',
     protocol: 'oauth',
     options: {
@@ -50,6 +49,6 @@ module.exports.passport = {
   google: {
     name: 'Google',
     protocol: 'openid'
-  }*/
+  }
 
 };

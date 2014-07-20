@@ -6,26 +6,21 @@
         role: '<%= currentUser.role %>',
 		email: '<%= currentUser.email %>',
 		first_name: '<%= currentUser.first_name %>',
-        model:  '<%=currentUser.model %>',
-        year:  '<%= currentUser.year %>',
-        color:  '<%= currentUser.color %>',
-        bodytype:  '<%= currentUser.bodytype %>',
-        plate: '<%= currentUser.plate %>',
-        state: '<%= currentUser.state %>',
         no:   '<%= currentUser.no %>',
-
-
         createdAt: '<%= currentUser.createdAt %>',
 		updatedAt: '<%= currentUser.updatedAt %>'
-
-
-
 
 	};
 </script>
 <% } %>
 
 <div ng-include="'header/index.tpl.html'"></div>
+<%= __('Hello') %>
 
+<select name="locale">
+    <% locales.forEach(function(locale) { %>
+    <option value="<%=locale%>" <%=__.defaultLocale == locale ? 'selected' : ''%>><%=locale%></option>
+    <% }); %>
+</select>
 <div class="container" ui-view="main">
 </div><!-- /.container -->

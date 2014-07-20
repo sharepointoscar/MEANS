@@ -8,19 +8,25 @@ angular.module( 'sailng', [
 	'templates-app',
 	'services',
 	'models',
+    //'rxDataTable',
     'ngTable',
 
-	'sailng.header',
+
+    'directive.blink',
+    'sailng.header',
 	'sailng.home',
 	'sailng.about',
 	'sailng.messages',
-    'sailng.todos'
+    'sailng.todos',
+    'sailng.users'
+
 ])
-//angular.module('crmApp', ['ngResource', 'ngRoute', 'angular-table', 'ui.bootstrap', 'ngGrid',
-//'ngCookies', 'xeditable', 'angularFileUpload',  'ngSails','ngAnimate','LocalStorageModule','lodash','services'])
 
+//  .config(['$routeProvider', '$locationProvider', '$httpProvider','localStorageServiceProvider', function($routeProvider, $locationProvider, $httpProvider,localStorageServiceProvider) {
 
-.config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
+    //.config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
+
+     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
 	// $urlRouterProvider.otherwise( '/home' );
 	$urlRouterProvider.otherwise(function ($injector, $location) {
 		if ($location.$$url === '/') {
@@ -32,12 +38,12 @@ angular.module( 'sailng', [
 		}
 	});
 	$locationProvider.html5Mode(true);
-})
+}])
 
 .run( function run () {
 	moment.lang('en');
 })
 
-.controller( 'AppCtrl', function AppCtrl ( $scope, config ) {
+.controller( 'AppCtrl',['$scope', 'config', function AppCtrl ( $scope, config ) {
 	config.currentUser = window.currentUser;
-});
+}]);

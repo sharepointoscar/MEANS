@@ -17,6 +17,7 @@ module.exports.sockets = {
   onConnect: function(session, socket) {
 
     // By default, do nothing.
+      console.log('sockets.js:: onConnect executed!');
     
   },
 
@@ -24,6 +25,7 @@ module.exports.sockets = {
   onDisconnect: function(session, socket) {
 
     // By default: do nothing.
+      console.log('sockets.js:: onDisconnect executed!');
   },
 
 

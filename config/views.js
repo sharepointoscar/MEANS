@@ -49,7 +49,7 @@ module.exports.views = {
   // to your layout file from `views/` folder. (the file extension, ".ejs", should be omitted)
   //
 
-  layout: 'layout'
+  layout: 'layouts/internal',
 
 
 
@@ -64,7 +64,7 @@ module.exports.views = {
   // layout: 'layouts/public'
   // 
   // But you might override that in some of your controllers with:
-  // layout: 'layouts/internal'
+   layout: 'layouts/public'
 
   
 };

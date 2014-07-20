@@ -71,7 +71,7 @@ module.exports.blueprints = {
    * you must take great care not to inadvertently expose unsafe/unintentional controller logic
    * to GET requests.
    */
-  actions: false,
+  actions: true,
 
 
   
@@ -93,7 +93,7 @@ module.exports.blueprints = {
    * `rest` blueprints are enabled by default, and are suitable for a production scenario,
    * as long you take standard security precautions (combine w/ policies, etc.)
    */
-  rest: false,
+  rest: true,
 
 
   /**
@@ -105,7 +105,7 @@ module.exports.blueprints = {
    *
    * `shortcuts` are enabled by default, but SHOULD BE DISABLED IN PRODUCTION!!!!!
    */
-  shortcuts: false,
+  shortcuts: true,
 
 
 
@@ -128,7 +128,7 @@ module.exports.blueprints = {
    *
    * By default, no prefix is used.
    */
-  prefix: '',
+  prefix: '/blueprint',
 
 
 

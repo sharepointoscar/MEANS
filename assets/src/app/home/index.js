@@ -1,7 +1,7 @@
-angular.module( 'sailng.home', [
-])
+angular.module( 'sailng.home', [])
 
-.config(function config( $stateProvider ) {
+//.config(function config( $stateProvider ) {
+    .config( ['$stateProvider',function config( $stateProvider ) {
 	$stateProvider.state( 'home', {
 		url: '/home',
 		views: {
@@ -11,11 +11,11 @@ angular.module( 'sailng.home', [
 			}
 		}
 	});
-})
+}])
 
-.controller( 'HomeCtrl', function HomeController( $scope, titleService ) {
+        .controller( 'HomeCtrl', ['$scope', 'titleService',function HomeController( $scope, titleService ) {
 	titleService.setTitle('Home');
 
 
 
-});
+}]);

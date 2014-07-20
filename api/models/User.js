@@ -16,6 +16,12 @@ module.exports = {
 			type: 'string',
 			required: true
 		},
+        role: {
+            type: 'INTEGER',
+            required: false
+        },
+
+
 		message_count: {
 			type: 'number'
 		},

@@ -1,6 +1,6 @@
 angular.module('services.title', [])
 
-.factory('titleService', function($document) {
+.factory('titleService',['$document', function($document) {
   var suffix, title;
   suffix = title = " - Sailng";
 
@@ -23,4 +23,4 @@ angular.module('services.title', [])
       return $document.prop('title');
     }
   };
-});
+}]);

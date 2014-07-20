@@ -4,10 +4,19 @@ module.exports = {
 			type: 'string',
 			required: true
 		},
+        date: {
+            type: 'string',
+            required: true
+        },
+        status:{
+            type: 'string',
+            required: true
+        },
 		user: {
 			model: 'user'
 		}
 	},
+
 
 	/**
 	* Callback to be run after creating a Message.

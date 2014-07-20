@@ -18,7 +18,30 @@ module.exports.policies = {
   // (`true` allows public access) 
   '*': true,
 
-  '*': [ 'passport' ]
+  // we are saying this size is localized be default.  Comment out otherwise.
+  //'*':  'localize',
+
+  '*': [ 'passport' ],
+
+
+    'TodoController':{
+        '*': 'sessionAuth'
+        // Apply 'isLogged' in by default to all actions that are NOT specified below
+//        '*': 'isLoggedIn',
+//        // If an action is explicitly listed, its policy list will override the default list.
+//        // So, we have to list 'isLoggedIn' again for the 'edit' action if we want it to be applied.
+//        edit: ['isAdmin', 'isLoggedIn']
+    },
+
+    'todos':
+    {
+        '*': 'passport'
+    },
+    //'api/messages':
+   'MessageController':
+    {
+        '*': 'sessionAuth'//'authenticated'
+    }
 
   /*
 	// Here's an example of adding some policies to a controller

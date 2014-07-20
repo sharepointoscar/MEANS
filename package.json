@@ -1,17 +1,17 @@
 {
-  "name": "Sailng",
+  "name": "SailngSeed",
   "private": true,
   "version": "0.2.0",
   "description": "a Sails + Angular boilerplate application",
   "keywords": [],
   "dependencies": {
-    "sails": "~0.10.0-rc5",
+    "sails": "0.10.0-rc8",
+    "sails-mongo": "~0.10.0-rc4",
     "sails-disk": "~0.10.0",
-    "sails-mongo": "0.10.0-rc2",
     "rc": "~0.3.3",
     "include-all": "~0.1.3",
     "ejs": "~0.8.4",
-    "grunt": "0.4.2",
+    "grunt": "^0.4.2",
     "grunt-sync": "~0.0.4",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-clean": "~0.5.0",
@@ -25,12 +25,18 @@
     "grunt-contrib-coffee": "~0.10.1",
     "grunt-html2js": "~0.1.9",
     "grunt-contrib-jshint": "~0.7.1",
-    "lodash": "~2.4.1",
+    "lodash": "^2.4.1",
     "passport": "~0.2.0",
     "passport-local": "~1.0.0",
     "bcrypt": "~0.7.7",
     "validator": "~3.5.1",
-    "sails-generate-auth": "~0.1.2"
+    "sails-generate-auth": "~0.1.2",
+    "moment": "^2.5.1",
+    "passport-google": "^0.3.0",
+    "passport-facebook": "^1.0.3",
+    "passport-github": "^0.1.5",
+    "passport-twitter": "^1.0.2",
+    "passport-google-oauth": "^0.1.5"
   },
   "scripts": {
     "start": "node app.js",
@@ -39,9 +45,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/johntom/sailng.git"
+    "url": "git://github.com/johntom/sailngSeed.git"
   },
-  "author": "Ryan Pharis, @ryancp" ,
-  "authorFork":"John Tomasell, @jrtgtz",
+  "author": "John Tomaselli&Oscar Molina",
   "license": "MIT"
 }

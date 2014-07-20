@@ -8,12 +8,12 @@
 
 module.exports = {
 
-  attributes: {
-  	
-  	/* e.g.
-  	nickname: 'string'
-  	*/
-    
-  }
+    attributes: {
+
+        /* e.g.
+         nickname: 'string'
+         */
+
+    }
 
 };

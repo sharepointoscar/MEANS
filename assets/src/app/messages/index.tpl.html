@@ -1,27 +1,198 @@
+<!--<style>
+body {
+padding: 10px !important;
+}
+
+.ng-table-rowselected tr {
+    cursor: pointer;
+}
+.emp{
+ background-color: #ffff00 ;
+ color: lightcoral;
+}
+.ng-table .plus, .ng-table .minus {
+font-weight: bold;
+padding-left: 18px;
+position: relative;
+}
+.ng-table .plus:before, .ng-table .minus:before {
+content:"";
+border-width: 4px;
+border-style:solid;
+left: 8px;
+top: 50%;
+position: absolute;
+margin-top: -2px;
+}
+.ng-table .plus {
+color: green;
+}
+.ng-table .plus:before {
+border-color: green;
+border-top:none;
+border-left:4px solid transparent;
+border-right:4px solid transparent;
+}
+.ng-table .minus {
+color: red;
+}
+.ng-table .minus:before {
+border-color: red;
+border-bottom:none;
+border-left:4px solid transparent;
+border-right:4px solid transparent;
+}
+.my-toggle-animation {
+    -webkit-transition:0.5s linear all;
+    transition:0.5s linear all;
+
+    background:white;
+    padding:10px;
+    border:1px solid black;
+    color:black;
+}
+
+.my-toggle-animation.disabled {
+    background:grey;
+    color:#555;
+    border-color:#555;
+}
+
+.animate-enter,
+.animate-leave
+{
+    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+}
+
+.animate-enter.animate-enter-active,
+.animate-leave {
+    opacity: 1;
+    top: 0;
+    height: 30px;
+}
+
+.animate-leave.animate-leave-active,
+.animate-enter {
+    opacity: 0;
+    top: -50px;
+    height: 0px;
+}
+</style>-->
+
+</br>
+
+
 
 <h2>Messages</h2>
-<p>Open this page in two browsers and see how easy Sails.js makes realtime applications!</p>
+<!--<span ng-if="currentUser.role=='4'" class="animate-if">-->
+ <!--<h3> user: {{currentUser.first_name}} role: {{currentUser.role}}    </h3>-->
+<!--</span>-->
 
 <p ng-show="!currentUser"><a href="/register">Register</a> to post a message!</p>
-
+<div class="container" ui-view="message">
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-7">
         <form role="form" ng-submit="createMessage(newMessage)">
             <div class="form-group">
-                <label for="messageTitle">Your Message</label>
-                <input type="text" ng-model="newMessage.title" class="form-control" id="messageTitle" ng-disabled="!currentUser">
-            </div>
-            <button type="submit" class="btn btn-primary" ng-disabled="!currentUser || !newMessage.title">Submit</button>
+                <label for="messageTitle">Your Message <i class="fa fa-comments"></i></label>
+                <input type="text" ng-model="newMessage.title" class="form-control" id="messageTitle"
+                       ng-disabled="!currentUser">
+
+                <label for="messageDate">Date/Time  </label>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p class="input-group">
+                            <input type="text" class="form-control" datepicker-popup="EEE MM/dd/yyyy"
+                                   ng-model="newMessage.date" is-open="opened" min="minDate" max="'2015-06-22'"
+                                   datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
+                                   ng-required="true" close-text="Close"/> <button class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-6">
+
+                    <button class="btn btn-sm btn-info" ng-click="today()">Today</button>
+                    <button class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
+                    </div>
+
+
+                </div>
+
+
+                <hr/>
+           </div>
+
+            <button type="submit" class="btn btn-primary" ng-disabled="!currentUser || !newMessage.title">Submit
+            </button>
         </form>
     </div>
-    <div class="col-md-6">
-        <h3>All Messages </h3>press <i class="fa fa-exchange"></i> button to update message on socket
-        <ul>
-            <li ng-repeat="message in messages"> - {{message.title}} <b>by</b> {{message.user.username}}, <span am-time-ago="message.updatedAt"></span>
-                <button type="button" class="btn btn-danger btn-xs" ng-click="destroyMessage(message)" ng-show="currentUser.id === message.user.id"><i class="fa fa-trash-o"></i></button>
-                <button type="button" class="btn btn-primary btn-xs" ng-click="updateMessage(message)"
-                        ng-show="currentUser.role==='4'"><i class="fa fa-exchange"></i></button>
-            </li>
-        </ul>
+
+    <div class="col-md-12">
+
+        <button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
+        <p><strong>Sorting:</strong> {{tableParams.sorting()|json}}
+
+        <table ng-table="tableParams" class="table">
+            <tr ng-repeat="message in  $data">
+
+
+                <td data-title="'title'" sortable="'title'">
+                    <span ng-class="{ 'fa fa-info-circle': todo.title == '666','fa fa-dot-circle-o': todo.title != '666' }">&nbsp; {{ message.title}}</span>
+                </td>
+                <td sortable="'date'" data-title="'date'">
+                    {{message.date |  date : format }}
+                </td>
+
+
+                <td sortable="'username'" ng-show="currentUser.role==='4'" data-title="'username'">
+                {{message.user.username  }}/ {{message.user.role}}
+
+                </td>
+                <td sortable="'status'" data-title="'status'">
+                    {{message.status  }} {{stats[message.status].name}}
+                </td>
+
+
+                <td data-title="'chg status2'">
+                    <button type="button" class="btn btn-primary btn-xs" ng-click="fetchMessage(message)"
+                            ng-show="currentUser.role ==='4'"><i class="fa fa-exchange"></i></button>
+                </td>
+                <td data-title="'chg status3'">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="fetchedMessage(message)"
+                            ng-show="currentUser.role ==='4'"><i class="fa fa-flag-checkered"></i></button>
+                </td>
+                <td data-title="'trash'">
+                    <button type="button" class="btn btn-danger btn-xs" ng-click="destroyMessage(message)"
+                            ng-show="currentUser.role =='4' || currentUser.id == message.user.id"><i class="fa fa-trash-o"></i></button>
+                </td>
+
+
+            </tr>
+            </tbody>
+        </table>
+
     </div>
+   <!-- <div class="col-md-12">
+
+    <div class="container">
+        <pre>
+        $state = {{$state.current.name}}
+        $stateParams = {{$stateParams}}
+        </pre>
+    </div>
+    </div>
+
+
+    </div>-->
 </div>

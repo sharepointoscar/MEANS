@@ -26,7 +26,10 @@ exports.register = function (req, res, next) {
   var email    = req.param('email')
     , username = req.param('username')
     , password = req.param('password')
-    , first_name = req.param('first_name');
+    , first_name = req.param('first_name')
+
+    , role = req.param('role');
+
 
   if (!email) {
     req.flash('error', 'Error.Passport.Email.Missing');
@@ -47,12 +50,16 @@ exports.register = function (req, res, next) {
     req.flash('error', 'Error.Passport.Email.Missing');
     return next(new Error('No first name was entered.'));
   }
-
+    if (!role) {
+        req.flash('error', 'Error.Passport.role.Missing');
+        return next(new Error('No role was entered.'));
+    }
   User.create({
     username : username,
     email    : email,
-  	first_name: first_name
-  }).done(function (err, user) {
+  	first_name: first_name,
+      role:role
+  }).exec(function (err, user) {
     if (err) {
       req.flash('error', 'Error.Passport.User.Exists');
       return next(err);
@@ -62,7 +69,8 @@ exports.register = function (req, res, next) {
       protocol : 'local'
     , password : password
     , user     : user.id
-    }).done(function (err, passport) {
+    , role: user.role
+    }).exec(function (err, passport) {
       next(err, user);
     });
   });
@@ -86,7 +94,7 @@ exports.connect = function (req, res, next) {
   Passport.findOne({
     protocol : 'local'
   , user     : user.id
-  }).done(function (err, passport) {
+  }).exec(function (err, passport) {
     if (err) return next(err);
 
     if (!passport) {
@@ -94,11 +102,18 @@ exports.connect = function (req, res, next) {
         protocol : 'local'
       , password : password
       , user     : user.id
-      }).done(function (err, passport) {
+      , role : user.role
+      }).exec(function (err, passport) {
         next(err, user);
       });
     }
     else {
+        console.log('======================================');
+        console.log('======================================');
+        console.log('======================================');
+
+        console.log('`req.session.authenticated = true;`',req.session.authenticated = true)
+        req.session.authenticated = true;
       next(null, user);
     }
   });
@@ -127,7 +142,7 @@ exports.login = function (req, identifier, password, next) {
     query.username = identifier;
   }
 
-  User.findOne(query).done(function (err, user) {
+  User.findOne(query).exec(function (err, user) {
     if (err) return next(err);
 
     if (!user) {
@@ -143,7 +158,7 @@ exports.login = function (req, identifier, password, next) {
     Passport.findOne().where({
       protocol : 'local'
     , user     : user.id
-    }).done(function (err, passport) {
+    }).exec(function (err, passport) {
       if (passport) {
         passport.validatePassword(password, function (err, res) {
           if (err) return next(err);

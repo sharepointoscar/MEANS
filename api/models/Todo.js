@@ -1,4 +1,4 @@
-/**
+    /**
  * Todo
  *
  * @module      :: Model
@@ -17,6 +17,11 @@ module.exports = {
       type: 'boolean',
       defaultsTo: false
     },
+      status:{
+          type: 'string',
+          required: true
+      },
+
       user: {
           model: 'user'
       }

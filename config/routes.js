@@ -21,7 +21,13 @@
 
 module.exports.routes = {
 
-
+    /**
+     * We set the default language for all routes
+     * **/
+    '/*': function(req, res, next) {
+        res.setLocale(req.param('lang') || sails.config.i18n.defaultLocale);
+        return next();
+    },
   // Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, etc. depending on your
   // default view engine) your home page.
   // 
@@ -31,14 +37,23 @@ module.exports.routes = {
     action: 'index'
   },
 
-  'get /login': 'AuthController.login',
-  'get /logout': 'AuthController.logout',
-  'get /register': 'AuthController.register',
+
+  'GET /login': 'AuthController.login',
+  'GET /logout': 'AuthController.logout',
+  'GET /register': 'AuthController.register',
 
   'post /auth/local': 'AuthController.callback',
   'post /auth/local/:action': 'AuthController.callback',
+  'post /auth/google': 'AuthController.callback',
+  'post /auth/google/:action': 'AuthController.callback',
 
+//
+//   'GET /auth/auth': 'AuthController.register',
+//
+//    'post /auth/facebook': 'AuthController.callback',
+//    'post /auth/facebook/:action': 'AuthController.callback',
 
+//    app.post('/auth/openid', passport.authenticate('openid'));
   // Custom routes here...
 
     /**
@@ -58,15 +73,15 @@ module.exports.routes = {
     'put /api/message': 'MessageController.update',
 //    'put /api/message/:id': 'MessageController.update',
 
-    'delete /api/message/:id': 'MessageController.destroy',
 
+    'delete /api/message/:id': 'MessageController.destroy',
 
     //todo
     'get /api/todo': 'TodoController.getAll',
     'get /api/todo/:id': 'TodoController.getOne',
     'post /api/todo': 'TodoController.create',
     'delete /api/todo/:id': 'TodoController.destroy',
-
+    'put /api/todo': 'TodoController.update',
 
 
   // If a request to a URL doesn't match any of the custom routes above, it is matched 
@@ -76,6 +91,6 @@ module.exports.routes = {
   'get /home': 'HomeController.index',
   'get /about': 'HomeController.index',
   'get /messages': 'HomeController.index',
-    'get /todos': 'HomeController.index'
+  'get /todos': 'HomeController.index'
 
 };

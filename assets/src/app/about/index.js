@@ -1,8 +1,8 @@
 angular.module( 'sailng.about', [
 ])
 
-.config(function config( $stateProvider ) {
-	$stateProvider.state( 'about', {
+    .config( ['$stateProvider',function config( $stateProvider ) {
+        $stateProvider.state( 'about', {
 		url: '/about',
 		views: {
 			"main": {
@@ -11,8 +11,8 @@ angular.module( 'sailng.about', [
 			}
 		}
 	});
-})
+}])
 
-.controller( 'AboutCtrl', function AboutController( $scope, titleService ) {
+.controller( 'AboutCtrl',['$scope', 'titleService', function AboutController( $scope, titleService ) {
 	titleService.setTitle('About');
-});
+}]);

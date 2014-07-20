@@ -44,10 +44,13 @@ var AuthController = {
       };
     });
 
+
+
     // Render the `auth/login.ext` view
     res.view({
       providers : providers
     , errors    : req.flash('error')
+    , layout:   '/layouts/public'
     });
   },
 
@@ -66,6 +69,8 @@ var AuthController = {
    * @param {Object} res
    */
   logout: function (req, res) {
+    req.session.authenticated = false;//jrt
+    req.session.user = '';//jrt
     req.logout();
     res.redirect('/');
   },
@@ -87,7 +92,8 @@ var AuthController = {
    */
   register: function (req, res) {
     res.view({
-      errors: req.flash('error')
+      errors: req.flash('error') ,
+      layout:'/layouts/public'
     });
   },
 
@@ -117,8 +123,15 @@ var AuthController = {
    * @param {Object} req
    * @param {Object} res
    */
-  callback: function (req, res) {
-    passport.callback(req, res, function (err, user) {
+  getOne: function (req, res) {
+     console.log('in get one')
+  },
+
+
+    callback: function (req, res) {
+      console.log('in callback one')
+      passport.callback(req, res, function (err, user) {
+      console.log('in callback 2 ')
       req.login(user, function (err) {
         // If an error was thrown, redirect the user to the login which should
         // take care of rendering the error messages.
@@ -128,7 +141,16 @@ var AuthController = {
         // Upon successful login, send the user to the homepage were req.user
         // will available.
         else {
-        	console.log('currently logged in user is: ' + req.user.username);
+            // jrt
+
+            console.log('===api/controllers/AuthController.js============================================');
+            console.log('currently logged in user is: ' + req.user.username);
+            // must set session here !!!jrt -jul 19 2014
+            req.session.authenticated = true;//jrt
+            req.session.user = user;//jrt
+            console.log('currently logged in user  req.session.authenticated : ' + req.session.authenticated);
+            console.log('================================================================================');
+            console.log('================================================================================');
           res.redirect('/');
         }
       });
