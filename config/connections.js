@@ -56,7 +56,7 @@ module.exports.connections = {
         host      : 'localhost',
         port      : 27017,
 
-        database: 'sailngMongo'
+        database: 'means-seed'
     },
 
   // PostgreSQL is another officially supported relational database. 
