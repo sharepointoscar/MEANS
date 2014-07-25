@@ -16,15 +16,10 @@ angular.module( 'sailng', [
     'sailng.header',
 	'sailng.home',
 	'sailng.about',
-	'sailng.messages',
     'sailng.todos',
     'sailng.users'
 
 ])
-
-//  .config(['$routeProvider', '$locationProvider', '$httpProvider','localStorageServiceProvider', function($routeProvider, $locationProvider, $httpProvider,localStorageServiceProvider) {
-
-    //.config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
 
      .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
 	// $urlRouterProvider.otherwise( '/home' );

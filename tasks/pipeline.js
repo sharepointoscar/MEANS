@@ -19,7 +19,6 @@ var cssFilesToInject = [
 ];
 
 var fontFilesToInject = [
-    //'bower_components/fontawesome/fonts/fontawesome-webfont.woff'
     'bower_components/fontawesome/fonts/*'
 ];
 
@@ -85,7 +84,7 @@ module.exports.jsFilesToInject = jsFilesToInject.map(function(path) {
 module.exports.templateFilesToInject = templateFilesToInject.map(function(path) {
     return 'assets/' + path;
 });
-//jrt
+
 module.exports.imagesFilesToInject = imagesFilesToInject.map(function(path) {
     return   path;
 });
@@ -93,4 +92,3 @@ module.exports.imagesFilesToInject = imagesFilesToInject.map(function(path) {
 module.exports.fontFilesToInject = fontFilesToInject.map(function(path) {
     return   path;
 });
-

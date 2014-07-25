@@ -26,12 +26,6 @@ module.exports = {
           model: 'user'
       }
   },
-//    getAll: function() {
-//        return Todo.find()
-//            .then(function (models) {
-//                return [models];
-//            });
-//    },
 
     afterCreate: function (todo, next) {
         // set message.user = to appropriate user model

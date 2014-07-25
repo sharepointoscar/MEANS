@@ -2,7 +2,7 @@ angular.module('services.title', [])
 
 .factory('titleService',['$document', function($document) {
   var suffix, title;
-  suffix = title = " - Sailng";
+  suffix = title = " - MEANS Seed Project";
 
   return {
     setSuffix: function(s) {

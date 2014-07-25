@@ -24,19 +24,13 @@
 module.exports = function (req, res, next) {
   // Initialize Passport
   passport.initialize()(req, res, function () {
+
     // Use the built-in sessions
     passport.session()(req, res, function () {
+
       // Make the user available throughout the frontend
       res.locals.user = req.user;
-//        if (req.user !== undefined)
-//        req.session.authenticated = true;//jrt2
-//        req.session.user =  req.user;//jrt2
-//        console.log('-----------------------------------------')
-//        console.log(' api/policies/passport.js ', req.session.user)
-//        console.log('-----------------------------------------')
-//        console.log('-----------------------------------------')
-//        console.log('-----------------------------------------')
-//        console.log('policy req.user:: ' , req.user);
+
       next();
     });
   });

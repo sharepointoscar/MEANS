@@ -24,10 +24,10 @@ module.exports = {
 		message_count: {
 			type: 'number'
 		},
-		messages: {
+/*		messages: {
 			collection: 'message',
 			via: 'user'
-		},
+		},*/
 		passports : { collection: 'Passport', via: 'user' }
 
 	},

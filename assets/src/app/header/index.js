@@ -5,13 +5,10 @@ angular.module( 'sailng.header', [
     $scope.currentUser = config.currentUser;
 
     var navItems = [
-        {title: 'Messages', translationKey: 'navigation:messages', url: '/messages', cssClass: 'fa fa-inbox fa-lg'},
+
         {title: 'Todos', translationKey: 'navigation:todos', url: '/todos', cssClass: 'fa fa-tasks fa-lg'}
-  //      {title: 'Users', translationKey: 'navigation:users', url: '/users', cssClass: 'fa fa-group fa-lg'}
 
     ];
-
-
 
     $scope.navItems = navItems;
 }]);
