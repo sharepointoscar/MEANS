@@ -12,7 +12,7 @@ module.exports = {
 		];
 
 		res.view({
-			title: 'Home - sailngMongo',
+			title: 'Home - MEANS',
 			navItems: navItems,
 			currentUser: req.user,
             locales: sails.config.i18n.locales,

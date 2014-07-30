@@ -14,58 +14,13 @@ angular.module( 'sailng.users', [
 	});
 }])
 
-    //.controller( 'TodoCtrl', function TodoController( $scope, $sails, lodash, config,titleService, TodoModel,$filter, ngTableParams  ) {
-//
-//    //    titleService.setTitle('Messages');
-//    $scope.newTodo = {};
-//	$scope.todos = [];
-//	$scope.currentUser = config.currentUser;
-
     .controller( 'UserCtrl',['$scope', '$sails', 'lodash', 'config', 'titleService', 'UserModel','$filter', 'ngTableParams', function UserController( $scope, $sails, lodash, config, titleService, UserModel,$filter, ngTableParams ) {
 
         $scope.newUser = {};
 
         $scope.users = [];
         $scope.currentUser = config.currentUser;
-        //console.log('scope.currentUser.data:: ', $scope.currentUser)
-        // old version $sails.on('message', function (envelope) {
-        // see  assets/src/common/models/Todo.js
-//        $sails.on('user', function (envelope) {
-//
-//            switch(envelope.verb) {
-//                case 'created':
-//                    $scope.todos.unshift(envelope.data);
-//                    $scope.tableParams.data=  $scope.users;
-//                    $scope.tableParams.reload();
-//
-//                    break;
-//                case 'destroyed':
-//                    lodash.remove($scope.users, {id: envelope.id});
-//                    $scope.tableParams.data=  $scope.users;
-//                    $scope.tableParams.reload();
-//                    break;
-//                case 'updated': //
-//                       console.log('in MessagesCtrl updated ',envelope.status,envelope.id,envelope)
-////                    for (var i in $scope.todos) {
-////                        if ($scope.todos[i].id == envelope.id) {
-////                            $scope.todos[i].status = envelope.data.status;
-////                        }
-////                    }
-//                    $scope.tableParams.data=  $scope.users;
-//                    $scope.tableParams.reload();
-//                    break;
-//            }
-//        });
 
-//        $scope.destroyMessage = function(message) {
-//            // check here if this message belongs to the currentUser
-//            //ng-show="currentUser.id === message.user.id || currentUser.role==='4'"><i class="fa fa-trash-o"></i></button>
-//            if (todos.user.id === config.currentUser.id || config.currentUser.role === '4') {
-//                Todo.delete(message).then(function(model) {
-//                    // message has been deleted, and removed from $scope.messages
-//                });
-//            }
-//        };
 
         $scope.destroyUser = function(user) {
             UserModel.delete(user).then(function(model) {
@@ -84,8 +39,6 @@ angular.module( 'sailng.users', [
             });
         };
 
-        // var   messPromise =  MessageModel.getAll($scope);
-        // messPromise.then(function (models) {
 
         UserModel.getAll($scope).then(function(models) {
             $scope.users = models.data;

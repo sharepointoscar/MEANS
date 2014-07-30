@@ -26,7 +26,8 @@ module.exports.routes = {
      * We set the default language for all routes
      * **/
     '/*': function(req, res, next) {
-        res.setLocale(req.param('lang') || sails.config.i18n.defaultLocale);
+       // res.setLocale(req.param('lang') || sails.config.i18n.defaultLocale);
+        res.setLocale(sails.config.i18n.defaultLocale);
         return next();
     },
   // Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, etc. depending on your
