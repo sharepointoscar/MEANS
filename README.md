@@ -121,7 +121,7 @@ Just use the following command for MochaJS Unit Testing
 
 The result of executing this command is shown below.  
 
-![image](https://raw.githubusercontent.com/SharePointOscar/MEANS/master/assets/images/screenshots/grunt_unit_testing.png =500x)
+![image](https://raw.githubusercontent.com/SharePointOscar/MEANS/master/assets/images/screenshots/grunt_unit_testing.png)
 
 
 #### Protractor e2e Testing ####

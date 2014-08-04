@@ -14,7 +14,8 @@
     "angular-moment": "~0.6.2",
     "angular-translate": "~2.1.0",
     "angular-translate-loader-static-files": "~2.1.0",
-    "angular-bootstrap": "~0.10.0"
+    "angular-bootstrap": "~0.10.0",
+    "bootswatch": "~3.2.0+1"
   },
   "dependencies": {
     "angular-rx-data-table": "~0.4.10",

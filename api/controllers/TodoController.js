@@ -17,6 +17,7 @@ module.exports = {
             })
             .fail(function(err) {
                 // An error occured
+                res.json(err);
             });
     },
 
