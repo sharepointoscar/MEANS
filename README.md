@@ -58,81 +58,43 @@ View the app on your local machine at [http://localhost:1337](http://localhost:1
 
 ```
 
-├── api 								-- server-side
-
-│   ├── controllers
-
-│   ├── models
-
-│   ├── policies
-
-
-│   ├── responses
-
-│   └── services
-
-├── assets							-- client-side
- 
-│   ├── bower_components
-
-│   ├── fonts
-
-│   ├── images
-
-│   ├── src							-- AngularJS components
-
-├   	|── app
-
-		|-- common
-
-		  |-- directives
-
-		  ├── models
-
-		  ├── services
-
-│   └── styles
-
-├── config							-- SailsJS Configuration
-
-│  
- 
-├── node_modules
-
-│  
-
-├── tasks							    -- Grunt Tasks
-
-│   ├── config
-
-│   └── register
-
-├── tests								 -- Testing Scripts
-
-│   ├── e2e
-
-		  |-- controllers
-
+├── api 								-- server-side<br/>
+│   ├── controllers<br/>
+│   ├── models<br/>
+│   ├── policies<br/>
+│   ├── responses<br/>
+│   └── services<br/>
+├── assets							-- client-side<br/>
+│   ├── bower_components<br/>
+│   ├── fonts<br/>
+│   ├── images<br/>
+│   ├── src							-- AngularJS components<br/>
+├   	|── app<br/>
+		|-- common<br/>
+		  |-- directives<br/>
+		  ├── models<br/>
+		  ├── services<br/>
+│   └── styles<br/>
+├── config							-- SailsJS Configuration<br/>
+│  <br/>
+ ├── node_modules<br/>
+│  <br/>
+├── tasks							    -- Grunt Tasks<br/>
+│   ├── config<br/>
+│   └── register<br/>
+├── tests								 -- Testing Scripts<br/>
+│   ├── e2e<br/>
+		  |-- controllers<br/>
 │   └── unit
-
-		  |-- adapters
-
-		  ├── controllers
-
-		  ├── models  		
- 
-		  ├── policies
-
-		  ├── services							
-   
-├── views
-
-│   ├── auth
-
-│   ├── home
-
-│   └── layouts
-
+		  |-- adapters<br/>
+		  ├── controllers<br/>
+		  ├── models<br/>  		
+ 		  ├── policies<br/>
+		  ├── services<br/>							
+   ├── views<br/>
+│   ├── auth<br/>
+│   ├── home<br/>
+│   └── layouts<br/>
 
 	
 ```
@@ -189,7 +151,7 @@ Just use the following command for MochaJS Unit Testing
 
 The result of executing this command is shown below. 
 
-![image](assets/images/screenshots/protractor_e2e_tests.png =500x)
+![image](assets/images/screenshots/protractor_e2e_tests.png)
 
 <br/>
 
