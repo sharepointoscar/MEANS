@@ -13,6 +13,26 @@ We've created a sample **TODO** module. Go ahead and sign in with a couple diffe
 # Getting Started #
 
 ## Prerequisites ##
+Before you begin, you should make sure you have installed all these prerequisites on your development machine.
+
+####Node.js & npm#####
+Download & Install Node.js and the npm package manager, if you encounter any problems, you can also use this Github Gist to install Node.js.
+
+######MongoDB####
+Download & Install MongoDB, and make sure it's running on the default port (27017).
+
+####Bower####
+You're going to use the Bower Package Manager to manage your front-end packages, in order to install it make sure you've installed Node.js and npm, then install bower globally using npm:
+	
+	$ npm install -g bower
+
+####Grunt####
+You're going to use the Grunt Task Runner to automate your development process, in order to install it make sure you've installed Node.js and npm, then install grunt globally using npm:
+
+	$ npm install -g grunt-cli
+Note: Your user might not have the permissions to install package globally, so use a super user or sudo or run with admin provledges for windows command
+
+
 Ensure you have **Sails v0.10** installed on your machine by executing the following commands:
 
     $ sudo npm install sails@beta -g
@@ -38,43 +58,81 @@ View the app on your local machine at [http://localhost:1337](http://localhost:1
 
 ```
 
-+├── api 								-- server-side 
+├── api 								-- server-side
+
 │   ├── controllers
+
 │   ├── models
+
 │   ├── policies
+
+
 │   ├── responses
+
 │   └── services
-├── assets							-- client-side 
+
+├── assets							-- client-side
+ 
 │   ├── bower_components
+
 │   ├── fonts
+
 │   ├── images
+
 │   ├── src							-- AngularJS components
+
 ├   	|── app
+
 		|-- common
+
 		  |-- directives
+
 		  ├── models
+
 		  ├── services
+
 │   └── styles
+
 ├── config							-- SailsJS Configuration
-│   
-├── node_modules
+
 │  
+ 
+├── node_modules
+
+│  
+
 ├── tasks							    -- Grunt Tasks
+
 │   ├── config
+
 │   └── register
+
 ├── tests								 -- Testing Scripts
+
 │   ├── e2e
+
 		  |-- controllers
+
 │   └── unit
+
 		  |-- adapters
+
 		  ├── controllers
-		  ├── models  		 
+
+		  ├── models  		
+ 
 		  ├── policies
-		  ├── services							   
+
+		  ├── services							
+   
 ├── views
+
 │   ├── auth
+
 │   ├── home
+
 │   └── layouts
+
 
 	
 ```
@@ -137,4 +195,4 @@ The result of executing this command is shown below.
 
 ## Screenshots ##
 
-![image](assets/images/screenshots/sailng-app.png =600x)
+![image](assets/images/screenshots/sailng-app.png)
