@@ -2,9 +2,9 @@
 
 ![image](http://beta.sailsjs.org/images/bkgd_squid.png =600x)
 
-MEANS is a boilerplate seed project that gives you a great foundation to start building real-time *MongoDB + ExpressJS + AngularJS + SailsJS*, single page applications.  It uses all the features available in the SailsJS framework and follows the same folder structure.
+MEANS is a boilerplate seed project that gives you a great foundation to start building real-time MongoDB + ExpressJS + AngularJS + SailsJS, single page applications.  It uses all the features available in the SailsJS framework and follows the same folder structure.
 
-SailsJS was created by [Mike McNeil](https://github.com/SharePointOscar/MEANS.git) and has gracefully open sourced it.  You can view documentation at [http://beta.sailsjs.org](http://sailsjs.org)
+SailsJS was created by [Mike McNeil](https://twitter.com/mikermcneil) and has gracefully open sourced it.  You can view documentation at [http://beta.sailsjs.org](http://sailsjs.org)
 
 We've created a sample **TODO** module. Go ahead and sign in with a couple different users in multiple browsers to see how it all works.
 
@@ -121,7 +121,7 @@ Just use the following command for MochaJS Unit Testing
 
 The result of executing this command is shown below.  
 
-![image](https://raw.githubusercontent.com/SharePointOscar/MEANS/master/assets/images/screenshots/grunt_unit_testing.png)
+![image](assets/images/screenshots/grunt_unit_testing.png =500x)
 
 
 #### Protractor e2e Testing ####
@@ -131,10 +131,10 @@ Just use the following command for MochaJS Unit Testing
 
 The result of executing this command is shown below. 
 
-![image](https://raw.githubusercontent.com/SharePointOscar/MEANS/master/assets/images/screenshots/protractor_e2e_tests.png =500x)
+![image](assets/images/screenshots/protractor_e2e_tests.png =500x)
 
 <br/>
 
 ## Screenshots ##
 
-![image](https://raw.githubusercontent.com/SharePointOscar/MEANS/master/assets/images/screenshots/sailng-app.png =600x)
+![image](assets/images/screenshots/sailng-app.png =600x)
