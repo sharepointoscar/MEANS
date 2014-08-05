@@ -69,6 +69,7 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-script-launcher": "^0.1.0",
     "requirejs": "^2.1.14",
-    "karma-requirejs": "^0.2.2"
+    "karma-requirejs": "^0.2.2",
+    "bootswatch": "^3.0.0"
   }
 }
