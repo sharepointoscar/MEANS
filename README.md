@@ -137,7 +137,7 @@ We've integrated Grunt Tasks for MochaJS unit testing.  We've created two tests,
 #### MochaJS Unit Testing ####
 Just use the following command for MochaJS Unit Testing
 
-	$ grunt test:unit ![image](assets/images/screenshots/grunt_unit_testing.png =500x)
+	$ grunt test:unit 
 
 
 The result of executing this command is shown below.  
