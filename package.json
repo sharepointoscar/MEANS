@@ -5,7 +5,7 @@
   "description": "MongoDB + ExpressJS + AngularJS + NodeJS + SailsJS MEANS Seed Project.",
   "keywords": [],
   "dependencies": {
-    "sails": "~0.10.1",
+    "sails": "0.10.1",
     "sails-mongo": "~0.10.1",
     "sails-disk": "~0.10.1",
     "rc": "~0.3.3",
