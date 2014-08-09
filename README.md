@@ -35,7 +35,7 @@ Note: Your user might not have the permissions to install package globally, so u
 
 Ensure you have **Sails v0.10** installed on your machine by executing the following commands:
 
-    $ sudo npm install sails@beta -g
+    $ sudo npm install sails@0.10.1 -g
     
 
 This will install the CLI globally.  Once you have the Sails CLI installed, proceed to execute the following:
