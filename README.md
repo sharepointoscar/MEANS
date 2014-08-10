@@ -4,7 +4,7 @@
 
 MEANS is a boilerplate seed project that gives you a great foundation to start building real-time MongoDB + ExpressJS + AngularJS + SailsJS, single page applications.  It uses all the features available in the SailsJS framework and follows the same folder structure.
 
-SailsJS was created by [Mike McNeil](https://twitter.com/mikermcneil) and has gracefully open sourced it.  You can view documentation at [http://beta.sailsjs.org](http://sailsjs.org)
+SailsJS was created by [Mike McNeil](https://twitter.com/mikermcneil) and has gracefully open sourced it.  You can view documentation at [http://sailsjs.org](http://sailsjs.org)
 
 We've created a sample **TODO** module. Go ahead and sign in with a couple different users in multiple browsers to see how it all works.
 
@@ -35,7 +35,7 @@ Note: Your user might not have the permissions to install package globally, so u
 
 Ensure you have **Sails v0.10** installed on your machine by executing the following commands:
 
-    $ sudo npm install sails@0.10.1 -g
+    $ sudo npm install sail -g
     
 
 This will install the CLI globally.  Once you have the Sails CLI installed, proceed to execute the following:
