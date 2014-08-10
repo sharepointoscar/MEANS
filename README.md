@@ -1,6 +1,6 @@
 # MEANS #
 
-![image](http://sailsjs.org/images/bkgd_squid.png)
+![image](http://beta.sailsjs.org/images/bkgd_squid.png)
 
 MEANS is a boilerplate seed project that gives you a great foundation to start building real-time MongoDB + ExpressJS + AngularJS + SailsJS, single page applications.  It uses all the features available in the SailsJS framework and follows the same folder structure.
 
