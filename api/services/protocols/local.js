@@ -58,7 +58,7 @@ exports.register = function (req, res, next) {
     username : username,
     email    : email,
   	first_name: first_name,
-      role:role
+    role:role
   }).exec(function (err, user) {
     if (err) {
       req.flash('error', 'Error.Passport.User.Exists');
@@ -108,12 +108,6 @@ exports.connect = function (req, res, next) {
       });
     }
     else {
-        console.log('======================================');
-        console.log('======================================');
-        console.log('======================================');
-
-        console.log('`req.session.authenticated = true;`',req.session.authenticated = true)
-        req.session.authenticated = true;
       next(null, user);
     }
   });
