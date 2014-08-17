@@ -44,7 +44,6 @@ This will install the CLI globally.  Once you have the Sails CLI installed, proc
     $ git clone https://github.com/SharePointOscar/MEANS.git
     $ cd into repo folder
     $ npm install
-    $ cd assets
     $ bower install
 
 This will install all client and server side packages needed.  Upon succesfully running the commands above, you are ready to lift your app!  At the root of the project run the following
@@ -146,7 +145,7 @@ The result of executing this command is shown below.
 
 
 #### Protractor e2e Testing ####
-Just use the following command for MochaJS Unit Testing
+Just use the following command for E2E  Testing
 
 	$ grunt protractor
 

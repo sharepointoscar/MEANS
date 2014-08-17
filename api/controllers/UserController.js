@@ -43,7 +43,7 @@ switch (project.role) {
  break;
  }*/
 	create: function (req, res) {
-        console.log(req.params.all)
+        console.log(req.params.all);
 		var model = {
 			username: req.param('username'),
 			email: req.param('email'),

@@ -38,6 +38,21 @@ module.exports = {
 		.then(function (model) {
 			return [model];
 		});
-	}
+	},
+    insert: function (userObject) {
+
+        User.create(userObject)
+            .exec(function(err, newUser) {
+                if (err) {
+
+                    return err;
+                }
+                else {
+                    console.log(newUser);
+                    return newUser;
+                }
+            });
+    }
+
 
 };

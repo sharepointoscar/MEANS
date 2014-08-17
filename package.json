@@ -70,6 +70,7 @@
     "karma-script-launcher": "^0.1.0",
     "requirejs": "^2.1.14",
     "karma-requirejs": "^0.2.2",
-    "bootswatch": "^3.0.0"
+    "bootswatch": "^3.0.0",
+    "should": "^4.0.4"
   }
 }
