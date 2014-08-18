@@ -156,6 +156,36 @@ The result of executing this command is shown below.
 
 <br/>
 
+
+
+### Development / Contributing
+First read article about forking, and then basically just;
+
+Fork it, please.
+$ git clone YOUR_FORK_OF_THIS_REPO MEANS-fork
+$ cd MEANS-fork
+
+Create a branch (git checkout -b xxx)
+Commit your changes (git commit -am "some changes...")
+Push to the branch (git push origin xxx)
+Open a Pull Request
+Questions?
+You can try to contact me at jrtgtz@gmail.com
+
+IDE recommendation
+We use WebStorm from JetBrains, awesome!
+
+### Questions?
+
+See `FAQ.md`.
+
+### Thanks
+This application wouldn't be possible to do if I didn't get some help and support from others. So special thanks goes to people on list below.
+
+The entire team at #sailsjs IRC-channel @freenode
+https://github.com/janpantel/angular-sails
+https://github.com/ryancp/sailng
+Please note that there are many other who helped me with this application...
 ## Screenshots ##
 
 ![image](assets/images/screenshots/sailng-app.png)
