@@ -177,15 +177,15 @@ We use WebStorm from JetBrains, awesome!
 
 ### Questions?
 
-See `FAQ.md`.
+See [https://github.com/SharePointOscar/MEANS/blob/development/FAQ.md](https://github.com/SharePointOscar/MEANS/blob/development/FAQ.md "FAQ").
 
 ### Thanks
 This application wouldn't be possible to do if I didn't get some help and support from others. So special thanks goes to people on list below.
 
 The entire team at #sailsjs IRC-channel @freenode
-https://github.com/janpantel/angular-sails
-https://github.com/ryancp/sailng
-Please note that there are many other who helped me with this application...
+[https://github.com/janpantel/angular-sails](https://(github.com/janpantel/angular-sails "AngularSails") 
+[https://github.com/ryancp/sailng](https://(github.com/ryancp/sailng "Sailng - Started the fire") 
+
 ## Screenshots ##
 
 ![image](assets/images/screenshots/sailng-app.png)
