@@ -7,7 +7,7 @@
                 <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
                     class="icon-bar"></span><span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">MEANS Seed Project: </a>
+            <a class="navbar-brand" href="/">MEANS Seed Project </a>
             <!-- {{currentUser.role}}-->
          </div>
          <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,7 +17,7 @@
                     <a ng-hide="!currentUser" href="{{navItem.url}}"><i class="{{navItem.cssClass}}"></i>&nbsp; {{navItem.title}}</a>
                 </li>
                 <!-- only admin can view -->
-                <li ng-hide="currentUser.role!=4" ><a href="/users"><span class="fa fa-group fa-lg"></span>Admin Users</a></li>
+                <li ng-hide="currentUser.role!=4" ><a href="/users"><span class="fa fa-group fa-lg"></span>User List</a></li>
             </ul>
 
 

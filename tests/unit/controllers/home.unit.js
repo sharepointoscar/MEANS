@@ -6,11 +6,23 @@ var HomeController = require('../../../api/controllers/HomeController'),
 
 before(function (done) {
 
-    // Lift Sails and start the server
+    this.timeout(5000);
+
     Sails.lift({
 
         log: {
             level: 'error'
+        },
+
+        adapters: {
+            'default': 'someMongodbServer',
+           MongodbServer: {
+                adapter   : 'sails-mongo',
+                host      : 'localhost',
+                port      : 27017,
+
+                database: 'means-seed'
+            }
         }
 
     }, function (err, sails) {

@@ -98,6 +98,7 @@ passport.connect = function (req, query, profile, next) {
   })
   .populate('user')
   .exec(function (err, passport) {
+
     if (err) return next(err);
 
     if (!req.user) {

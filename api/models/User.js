@@ -1,10 +1,8 @@
-var bcrypt = require('bcrypt');
-
 module.exports = {
 	attributes: {
 		username: {
 			type: 'string',
-			required: true,
+			required: false,
 			unique: true
 		},
 		email: {
@@ -24,10 +22,6 @@ module.exports = {
 		message_count: {
 			type: 'number'
 		},
-/*		messages: {
-			collection: 'message',
-			via: 'user'
-		},*/
 		passports : { collection: 'Passport', via: 'user' }
 
 	},
@@ -45,18 +39,20 @@ module.exports = {
 			return [model];
 		});
 	},
-    beforeCreate: function(user, cb) {
-        bcrypt.genSalt(10, function(err, salt) {
-            bcrypt.hash(user.password, salt, function(err, hash) {
+    insert: function (userObject) {
+
+        User.create(userObject)
+            .exec(function(err, newUser) {
                 if (err) {
-                    console.log(err);
-                    cb(err);
-                }else{
-                    user.password = hash;
-                    cb(null, user);
+
+                    return err;
+                }
+                else {
+                    console.log(newUser);
+                    return newUser;
                 }
             });
-        });
     }
+
 
 };
