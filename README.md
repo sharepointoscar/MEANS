@@ -186,9 +186,10 @@ This application wouldn't be possible to do if I didn't get some help and suppor
 
 The entire team at [sailsjs.org](http://sailsjs.org)
 <br/>
-[AngularSails](http://https://github.com/janpantel/angular-sails)
+https://github.com/janpantel/angular-sails
+[AngularSails](https://github.com/janpantel/angular-sails)
 <br/>
-[Sailng - for starting the fire](http://https://github.com/janpantel/angular-sails)
+[Sailng - for starting the fire](https://github.com/janpantel/angular-sails)
 
 
 ## Screenshots ##
