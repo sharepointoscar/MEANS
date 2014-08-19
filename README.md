@@ -1,6 +1,6 @@
 # MEANS #
 
-![image](http://beta.sailsjs.org/images/bkgd_squid.png)
+![image](http://sailsjs.org/images/bkgd_squiddy.png)
 
 MEANS is a boilerplate seed project that gives you a great foundation to start building real-time MongoDB + ExpressJS + AngularJS + SailsJS, single page applications.  It uses all the features available in the SailsJS framework and follows the same folder structure.
 
@@ -154,6 +154,41 @@ The result of executing this command is shown below.
 ![image](assets/images/screenshots/protractor_e2e_tests.png)
 
 <br/>
+
+
+
+### Development / Contributing
+First read article about forking, and then basically just;
+
+Fork it, please.
+$ git clone YOUR_FORK_OF_THIS_REPO MEANS-fork
+$ cd MEANS-fork
+
+Create a branch (git checkout -b xxx)
+Commit your changes (git commit -am "some changes...")
+Push to the branch (git push origin xxx)
+Open a Pull Request
+Questions?
+You can try to contact me at jrtgtz@gmail.com
+
+IDE recommendation
+We use WebStorm from JetBrains, awesome!
+
+### Questions?
+
+
+See [FAQ.md](https://github.com/SharePointOscar/MEANS/blob/development/FAQ.md) 
+
+
+### Thanks
+This application wouldn't be possible to do if I didn't get some help and support from others. So special thanks goes to people on list below.
+
+The entire team at [sailsjs.org](http://sailsjs.org)
+<br/>
+[AngularSails](https://github.com/janpantel/angular-sails)
+<br/>
+[Sailng - for starting the fire](https://github.com/janpantel/angular-sails)
+
 
 ## Screenshots ##
 
