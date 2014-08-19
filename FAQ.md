@@ -12,12 +12,12 @@ Thanks for contributing!
 ~John & Oscar
 
 
-### Roadmap
+# Roadmap
 
-The MEANS project is still in an beta stage.  Once we've tested it out a bit...
+The MEANS project is still in an beta stage. 
 > + Please tweet [@sailsjs](https://twitter.com/sailsjs) with any ideas/comments/questions about this repo.
 
 
-### License
+# License
 
 MIT

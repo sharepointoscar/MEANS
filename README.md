@@ -35,7 +35,7 @@ Note: Your user might not have the permissions to install package globally, so u
 
 Ensure you have **Sails v0.10** installed on your machine by executing the following commands:
 
-    $ sudo npm install sail -g
+    $ sudo npm install sails -g
     
 
 This will install the CLI globally.  Once you have the Sails CLI installed, proceed to execute the following:
@@ -156,40 +156,30 @@ The result of executing this command is shown below.
 <br/>
 
 
-
-### Development / Contributing
-First read article about forking, and then basically just;
-
-Fork it, please.
-$ git clone YOUR_FORK_OF_THIS_REPO MEANS-fork
-$ cd MEANS-fork
-
-Create a branch (git checkout -b xxx)
-Commit your changes (git commit -am "some changes...")
-Push to the branch (git push origin xxx)
-Open a Pull Request
-Questions?
-You can try to contact me at jrtgtz@gmail.com
-
-IDE recommendation
-We use WebStorm from JetBrains, awesome!
-
-### Questions?
-
-
-See [FAQ.md](https://github.com/SharePointOscar/MEANS/blob/development/FAQ.md) 
-
-
-### Thanks
-This application wouldn't be possible to do if I didn't get some help and support from others. So special thanks goes to people on list below.
-
-The entire team at [sailsjs.org](http://sailsjs.org)
-<br/>
-[AngularSails](https://github.com/janpantel/angular-sails)
-<br/>
-[Sailng - for starting the fire](https://github.com/janpantel/angular-sails)
-
-
 ## Screenshots ##
 
 ![image](assets/images/screenshots/sailng-app.png)
+
+<br><br><br>
+
+# Authors
+[@SharePointOscar](http://twitter.com/SharePointOscar) and [@jrtgtz](http://twitter.com/SharePointOscar)
+
+<br>
+# Roadmap
+ - Document deployment to various clouds such a [Heroku](http://www.heroku.com), [Cloudbees](http://www.cloudbees.com) and others.
+ - Add additional test script for both client-side and server-side
+
+
+<br>
+# Contributing
+All contributions are welcome.  For any feature, you should include a test script and ensure all tests are passing.
+
+Please submit Issues via [Github](https://github.com/SharePointOscar/MEANS/issues)
+<br>
+
+# Thanks
+This application wouldn't be possible to do if I didn't get some help and support from others. So special thanks goes to people on list below.
+
+The entire team at [sailsjs.org](http://sailsjs.org), [AngularSails](https://github.com/janpantel/angular-sails) and [Sailng - for starting the fire](https://github.com/janpantel/angular-sails)
+
