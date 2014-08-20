@@ -1,12 +1,15 @@
 exports.config = {
-  allScriptsTimeout: 300000,
 
+  allScriptsTimeout: 300000,
+  //  C:\Node\Apps\sails10\MEANS\tests\e2e\controllers\todo.spec.js
+//    specs: ['../tests/e2e/controllers/todo-spec.js'],
   specs: [
     '../tests/e2e/**/*.js'
   ],
 
   capabilities: {
     'browserName': 'chrome'
+    //  'browserName': 'firefox'
   },
 
   baseUrl: 'http://localhost:1337/',
