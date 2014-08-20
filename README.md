@@ -181,5 +181,5 @@ Please submit Issues via [Github](https://github.com/SharePointOscar/MEANS/issue
 # Thanks
 This application wouldn't be possible to do if I didn't get some help and support from others. So special thanks goes to people on list below.
 
-The entire team at [sailsjs.org](http://sailsjs.org), [AngularSails](https://github.com/janpantel/angular-sails) and [Sailng - for starting the fire](https://github.com/janpantel/angular-sails)
+The entire team at [sailsjs.org](http://sailsjs.org), [AngularSails](https://github.com/janpantel/angular-sails) and [Sailng - for starting the fire](https://github.com/ryancp/sailng)
 
