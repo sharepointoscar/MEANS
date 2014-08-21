@@ -1,36 +1,3 @@
-// works
-//describe('angularjs homepage todo list', function() {
-//    it('should add a todo', function() {
-//        browser.get('http://www.angularjs.org');
-//
-//        element(by.model('todoText')).sendKeys('write a protractor test');
-//        element(by.css('[value="add"]')).click();
-//
-//        var todoList = element.all(by.repeater('todo in todos'));
-//        expect(todoList.count()).toEqual(3);
-//        expect(todoList.get(2).getText()).toEqual('write a protractor test');
-//    });
-//});
-// works
-//describe('MEANS App', function() {
-//    it('should add a login', function() {
-//        var email;
-//        var password;
-//        var loginButton;
-//        browser.get('http://localhost:1337/login');
-//        email = element(by.id('InputUsername'));
-//        email.sendKeys('oscar.medina@gmail.com');
-//        password =   element(by.id('InputPassword'));
-//        loginButton = element(by.className('btn-success'));
-//
-//        //send the credentials and click to login
-//        email.sendKeys('oscar.medina@gmail.com');
-//        password.sendKeys('theace01');
-//        loginButton.click();
-//    });
-//});
-
-
 
 'use strict';
 var util = require('util');
@@ -51,8 +18,8 @@ describe('MEANS App', function () {
             loginButton = element(by.className('btn-success'));
 
             //send the credentials and click to login
-            email.sendKeys('oscar.medina@gmail.com');
-            password.sendKeys('theace01');
+            email.sendKeys('me@someuser.com');
+            password.sendKeys('somepassword');
             loginButton.click();
 
         });
