@@ -37,7 +37,7 @@ angular.module( 'sailng.todos', [
                     $scope.todos.unshift(envelope.data);
                     $scope.tableParams.data=  $scope.todos;
                     $scope.tableParams.reload();
-                    $scope.newTodo = {};
+                    $scope.newTodo = {};// clear out title
                     break;
                 case 'destroyed':
                     lodash.remove($scope.todos, {id: envelope.id});
