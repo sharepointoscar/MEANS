@@ -124,14 +124,14 @@ var AuthController = {
    * @param {Object} res
    */
   getOne: function (req, res) {
-     console.log('in get one')
+
   },
 
 
     callback: function (req, res) {
-      console.log('in callback one')
+
       passport.callback(req, res, function (err, user) {
-      console.log('in callback 2 ')
+
       req.login(user, function (err) {
         // If an error was thrown, redirect the user to the login which should
         // take care of rendering the error messages.
@@ -142,18 +142,14 @@ var AuthController = {
         // will available.
         else {
 
-            console.log('===api/controllers/AuthController.js============================================');
-            console.log('currently logged in user is: ' + req.user.username);
+
             // must set session here !!!jrt -jul 19 2014
-            req.session.authenticated = true;//jrt
-            req.session.user = user;//jrt
+            req.session.authenticated = true;
+            req.session.user = user;
             console.log('currently logged in user  req.session.authenticated : ' + req.session.authenticated);
             console.log('================================================================================');
             console.log('================================================================================');
-
         	console.log('currently logged in user is: ' + req.user.username);
-
-
           res.redirect('/home');
         }
       });

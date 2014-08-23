@@ -16,45 +16,43 @@
 
 module.exports.passport = {
 
-  // In case you wish to turn off local authentication, simply
-  // set this to false and remove any related routes and endpoints.
-  local: true
-  /*
+    // In case you wish to turn off local authentication, simply
+    // set this to false and remove any related routes and endpoints.
+    local: true,
+    /*
 
-  twitter: {
-    name: 'Twitter',
-    protocol: 'oauth',
-    options: {
-      consumerKey: 'your-consumer-key',
-      consumerSecret: 'your-consumer-secret'
-    }
-  },
+     twitter: {
+     name: 'Twitter',
+     protocol: 'oauth',
+     options: {
+     consumerKey: 'your-consumer-key',
+     consumerSecret: 'your-consumer-secret'
+     }
+     },
 
-  github: {
-    name: 'GitHub',
-    protocol: 'oauth2',
-    options: {
-      clientID: 'your-client-id',
-      clientSecret: 'your-client-secret'
-    }
-  },
+     github: {
+     name: 'GitHub',
+     protocol: 'oauth2',
+     options: {
+     clientID: 'your-client-id',
+     clientSecret: 'your-client-secret'
+     }
+     },
      google: {
      name: 'Google',
      protocol: 'openid'
      }
-
+     */
     facebook: {
         name: 'Facebook',
         protocol: 'oauth2',
         strategy: require('passport-facebook').Strategy,
         options: {
-            clientID: 'your-key',
-            clientSecret: 'yourclientsecret'
+            clientID: '692742404149307',
+            clientSecret: '62f8f13d5c52f7398d5f25c2a9c613a2'
         },
-        scope:'email'
+        scope: 'email'
     }
-  }
 
-   */
 
 };

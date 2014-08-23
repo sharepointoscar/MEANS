@@ -1,9 +1,6 @@
 angular.module( 'sailng.todos', [
 ])
-
-//.config(function config( $stateProvider ) {
     .config( ['$stateProvider',function config( $stateProvider ) {
-
         $stateProvider.state( 'todos', {
 		url: '/todos',
 		views: {
@@ -16,22 +13,13 @@ angular.module( 'sailng.todos', [
 	});
 }])
 
-
-
     .controller( 'TodoCtrl',['$scope', '$sails', 'lodash', 'config', 'titleService', 'TodoModel','$filter', 'ngTableParams','$location', function TodoController( $scope, $sails, lodash, config, titleService, TodoModel,$filter, ngTableParams,$location ) {
-
         $scope.newTodo = {};
-
         $scope.todos = [];
         $scope.currentUser = config.currentUser;
-
         if ($scope.currentUser===undefined){
-           // alert('You must login to view')
             $location.path('/');
-
-            //window.location = '/';exit;
         }
-
 
         $scope.stats = [
             {name: 'null', value: 0},
@@ -44,14 +32,12 @@ angular.module( 'sailng.todos', [
         ];
 
         $sails.on('todo', function (envelope) {
-
             switch(envelope.verb) {
                 case 'created':
                     $scope.todos.unshift(envelope.data);
-                   // console.log('envelope.data:: ',envelope.data.comoboday, envelope.data)
                     $scope.tableParams.data=  $scope.todos;
                     $scope.tableParams.reload();
-
+                    $scope.newTodo = {};
                     break;
                 case 'destroyed':
                     lodash.remove($scope.todos, {id: envelope.id});
@@ -59,13 +45,10 @@ angular.module( 'sailng.todos', [
                     $scope.tableParams.reload();
                     break;
                 case 'updated': //
-                       console.log('in TodosCtrl updated ',envelope.status,envelope.id,envelope)
                     for (var i in $scope.todos) {
                         if ($scope.todos[i].id == envelope.id) {
                             $scope.todos[i].status = envelope.data.status;
-
                             $scope.todos[i].isComplete=($scope.todos[i].status==4)?true:false;
-                            console.log($scope.todos[i].status==4,$scope.todos[i].status,$scope.todos[i].isComplete);
                             if (  envelope.data.title !== undefined )   $scope.todos[i].title = envelope.data.title;
                         }
                     }
@@ -75,68 +58,44 @@ angular.module( 'sailng.todos', [
             }
         });
 
-
-
         $scope.fetchTodo = function (todo) {
-            console.log('fetchTodo  ',todo.title)
-//            if (config.currentUser.role === '4') {
             todo.status = 2;
             TodoModel.update(todo).then(function (model) {
-                    // message has been deleted, and removed from $scope.messages
                 });
-  //          }
         };
         $scope.fetchedTodo = function (todo) {
-            console.log('fetchedTodo ',todo.title)
-           // if (config.currentUser.role === '4') {
-
                todo.status = 3;
                TodoModel.update(todo).then(function (model) {
-                    // message has been deleted, and removed from $scope.messages
                 });
-           // }
         };
         $scope.finishTodo = function (todo) {
-            console.log('finishTodo  ',todo.title)
-//            if (config.currentUser.role === '4') {
             todo.status = 4;
             TodoModel.update(todo).then(function (model) {
-                // message has been deleted, and removed from $scope.messages
             });
-            //          }
         };
-
         $scope.destroyTodo = function(todo) {
-            console.log('todo ',todo.title)
             TodoModel.delete(todo).then(function(model) {
-                // todo has been deleted, and removed from $scope.todos
+             // todo has been deleted, and removed from $scope.todos
              //   lodash.remove($scope.todos, {id: todo.id});
             });
         };
-
         $scope.createTodo = function(newTodo) {
-            console.log('new ',newTodo)
+
             newTodo.user = config.currentUser.id;
             newTodo.status = 1;
             TodoModel.create(newTodo).then(function(model) {
-                $scope.newTodo.title ='';
-                //= {};
+               // can't reset here $scope.newTodo = {};
+
             });
         };
 
-        // var   messPromise =  MessageModel.getAll($scope);
-        // messPromise.then(function (models) {
-        console.log('TodoModel '  )
         TodoModel.getAll($scope).then(function(models) {
-            console.log('TodoModel2')
             $scope.todos = models.data;
             var data =$scope.todos;
-            console.log('data ',data)
             $scope.tableParams = new ngTableParams({
                 page: 1,            // show first page
                 count: 25,          // count per page
                 sorting: {
-                    //  comboday: 'asc'     // initial sorting
                     title: 'asc'
                 }
             }, {
@@ -149,6 +108,5 @@ angular.module( 'sailng.todos', [
                 }
             });
         });
-        console.log('  $scope.todos ',  $scope.todos)
+        //console.log('  $scope.todos ',  $scope.todos)
     }]);
-

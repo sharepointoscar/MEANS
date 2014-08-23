@@ -8,7 +8,7 @@ angular.module( 'sailng', [
 	'templates-app',
 	'services',
 	'models',
-    //'rxDataTable',
+
     'ngTable',
 
 
@@ -22,7 +22,7 @@ angular.module( 'sailng', [
 ])
 
      .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
-	// $urlRouterProvider.otherwise( '/home' );
+
 	$urlRouterProvider.otherwise(function ($injector, $location) {
 
 		if ($location.$$url === '/') {
