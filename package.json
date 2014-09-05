@@ -28,7 +28,6 @@
     "lodash": "~2.4.1",
     "passport": "~0.2.0",
     "passport-local": "~1.0.0",
-    "bcrypt": "~0.7.7",
     "validator": "~3.5.1",
     "sails-generate-auth": "~0.1.2",
     "moment": "^2.5.1",
