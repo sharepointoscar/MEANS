@@ -2,7 +2,6 @@ module.exports = {
 	getAll: function(req, res) {
 		User.getAll()
 		.spread(function(models) {
-                console.log('in getAll user', models)
 
                 res.json({data:models});
 		})

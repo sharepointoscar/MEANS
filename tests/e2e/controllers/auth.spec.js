@@ -1,7 +1,9 @@
+
 'use strict';
 var util = require('util');
 
 describe('MEANS App', function () {
+
 
     describe('Login scenarios', function () {
         var email;
@@ -10,16 +12,18 @@ describe('MEANS App', function () {
 
         it('should login user with valid credentials, redirect to member homepage', function () {
 
-            browser.get('/login');
+            browser.get("/login").then(function() {
 
-            email = element(by.id('InputUsername'));
-            password =   element(by.id('InputPassword'));
-            loginButton = element(by.className('btn-success'));
+                email = element(by.id('InputUsername'));
+                password =   element(by.id('InputPassword'));
+                loginButton = element(by.className('btn-success'));
 
-            //send the credentials and click to login
-            email.sendKeys('oscar.medina@gmail.com');
-            password.sendKeys('theace01');
-            loginButton.click();
+                //send the credentials and click to login
+                email.sendKeys('oscar.medina@gmail.com');
+                password.sendKeys('theace01');
+                loginButton.click();
+
+            });
 
         });
 

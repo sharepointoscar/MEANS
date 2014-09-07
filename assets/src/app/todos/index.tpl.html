@@ -13,12 +13,7 @@
             </button>
         </form>
     </div>
-    <!--<div class="col-md-8">-->
-        <!--<h3>All Todos</h3>-->
-        <!--<ul class="form-group">-->
-            <!--<li class="form-control" ng-repeat="todo in todos">{{todo.title}} <b>by</b> {{todo.user.username }}, <span am-time-ago="todo.updatedAt"></span> - <button type="button" class="btn btn-danger btn-xs" ng-click="destroyTodo(todo)"><i class="fa fa-trash-o"></i></button></li>-->
-        <!--</ul>-->
-    <!--</div>-->
+
     <div class="col-md-12">
 
         <button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
@@ -34,7 +29,7 @@
                 <td  data-title="'isComplete'" sortable="'isComplete'">
                     {{todo.isComplete }}
                 </td>
-                <td sortable="status" data-title="'status'">
+                <td sortable="'status'" data-title="'status'" >
                     {{todo.status  }} {{stats[todo.status].name}}
                 </td>
                 <td  data-title="'InProgress'">

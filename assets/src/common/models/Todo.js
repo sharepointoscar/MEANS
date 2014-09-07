@@ -2,7 +2,7 @@ angular.module('models.todo', ['lodash', 'services', 'ngSails'])
 
     .service('TodoModel',['$q', 'lodash', 'utils', '$sails', function($q, lodash, utils, $sails) {
         this.getAll = function() {
-            console.log ('TodoModel ')
+
             var deferred = $q.defer();
             var url = utils.prepareUrl('todo');
             $sails.get(url, function(models) {
@@ -32,7 +32,7 @@ angular.module('models.todo', ['lodash', 'services', 'ngSails'])
         this.update = function(modelu) {
             var deferred = $q.defer();
             var url = utils.prepareUrl('todo');
-            console.log ('modelu ',modelu);
+
 
             $sails.put(url, modelu, function(model) {
                 console.log ('after ',modelu);
