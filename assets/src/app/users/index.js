@@ -48,7 +48,7 @@ angular.module( 'sailng.users', [
                 page: 1,            // show first page
                 count: 25,          // count per page
                 sorting: {
-                    //  comboday: 'asc'     // initial sorting
+
                     title: 'asc'
                 }
             }, {

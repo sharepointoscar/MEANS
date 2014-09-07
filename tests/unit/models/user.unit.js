@@ -1,18 +1,17 @@
 var User = require('../../../api/models/User'),
-   // sinon = require('sinon'),
+// sinon = require('sinon'),
     assert = require('assert'),
     should = require('should'),
     Sails = require('sails');
 
-
-
 describe('The User Model', function () {
-    describe('before Local User is created', function () {
-        it ('should hash the password', function (done) {
-            User.beforeCreate({
-                password: 'password'
-            }, function (err, user) {
-                assert.notEqual(user.password, 'password');
+
+    describe('#findAll()', function () {
+        it('should get all Users', function (done) {
+            User.getAll().then(function (users) {
+
+                assert.notEqual(users, undefined);
+
                 done();
 
             }).fail(done);
@@ -21,27 +20,31 @@ describe('The User Model', function () {
 
     xdescribe('sign up', function () {
 
-        it ('should create User', function (done) {
+        it('should create User', function (done) {
 
             var sampleuser = {
                 username: 'jamesH',
                 email: 'james@yahoo.com',
-                password:'mypassword',
-                first_name:'james',
+                password: 'mypassword',
+                first_name: 'james',
                 role: 3
 
             };
 
-            User.insert(sampleuser)
-                .exec(function(err, newUser) {
 
-                    console.log('error creating user ',err);
-                    newUser.username.should.equal('jamesH');
-                    assert.notEqual(newUser, undefined);
+            describe('#findAll()', function () {
+                it('should get all Users', function (done) {
+                    User.getAll().then(function (users) {
 
-                    done();
+                        assert.notEqual(users, undefined);
 
-                }).fail(done);
+                        done();
+
+                    }).fail(done);
+                });
+            });
+
+
         });
     });
 
