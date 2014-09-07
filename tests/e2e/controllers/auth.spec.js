@@ -1,7 +1,9 @@
+
 'use strict';
 var util = require('util');
 
 describe('MEANS App', function () {
+
 
     describe('Login scenarios', function () {
         var email;
@@ -10,14 +12,19 @@ describe('MEANS App', function () {
 
         it('should login user with valid credentials, redirect to member homepage', function () {
 
-            browser.get('/login');
-            email = element(by.id('InputUsername'));
-            password =   element(by.id('InputPassword'));
-            loginButton = element(by.className('btn-success'));
-            //send the credentials and click to login replace this with a user already created on monggo serv
-            email.sendKeys('me@someuser.com');
-            password.sendKeys('somepassword');
-            loginButton.click();
+            browser.get("/login").then(function() {
+
+                email = element(by.id('InputUsername'));
+                password =   element(by.id('InputPassword'));
+                loginButton = element(by.className('btn-success'));
+
+                //send the credentials and click to login
+                email.sendKeys('user@email.com');
+                password.sendKeys('someuserpassword');
+                loginButton.click();
+
+            });
+
         });
 
         it('then ensure user is logged in', function () {
@@ -30,7 +37,7 @@ describe('MEANS App', function () {
             element(by.id('currentUserMenu')).then(function (usernameelement) {
 
                 expect(usernameelement.isDisplayed()).toBe(true);
-                expect(usernameelement.getText()).toEqual('username');// replace this with tested username fromo login used above
+                expect(usernameelement.getText()).toEqual('Oscar');
 
             });
         });
