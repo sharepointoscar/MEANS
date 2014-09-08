@@ -12,6 +12,8 @@ We've created a sample **TODO** module. Go ahead and sign in with a couple diffe
 
 [![Build Status](https://travis-ci.org/SharePointOscar/MEANS.svg?branch=master)](https://travis-ci.org/SharePointOscar/MEANS)
 
+<br/>
+
 # Getting Started #
 
 ## Prerequisites ##
