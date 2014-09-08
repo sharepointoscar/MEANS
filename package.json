@@ -1,7 +1,7 @@
 {
   "name": "MEANS",
   "private": false,
-  "version": "1.0-beta",
+  "version": "0.2.1",
   "description": "MongoDB + ExpressJS + AngularJS + NodeJS + SailsJS MEANS Seed Project.",
   "keywords": [],
   "dependencies": {
