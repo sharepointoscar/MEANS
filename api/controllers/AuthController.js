@@ -142,15 +142,10 @@ var AuthController = {
         // will available.
         else {
 
-
-            // must set session here !!!jrt -jul 19 2014
             req.session.authenticated = true;
             req.session.user = user;
-            console.log('currently logged in user  req.session.authenticated : ' + req.session.authenticated);
-            console.log('================================================================================');
-            console.log('================================================================================');
-        	console.log('currently logged in user is: ' + req.user.username);
-          res.redirect('/home');
+
+            res.redirect('/home');
         }
       });
     });

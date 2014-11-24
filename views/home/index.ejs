@@ -15,12 +15,12 @@
 <% } %>
 
 <div ng-include="'header/index.tpl.html'"></div>
-<%= __('Hello') %>
+<%= __('Welcome') %>
 
 <select name="locale">
-    <% locales.forEach(function(locale) { %>
-    <option value="<%=locale%>" <%=__.defaultLocale == locale ? 'selected' : ''%>><%=locale%></option>
-    <% }); %>
+	<% locales.forEach(function(locale) { %>
+	<option value="<%=locale%>" <%=__.defaultLocale == locale ? 'selected' : ''%>><%=locale%></option>
+	<% }); %>
 </select>
 <div class="container" ui-view="main">
 </div><!-- /.container -->
