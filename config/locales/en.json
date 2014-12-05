@@ -3,6 +3,11 @@
   "Error.Passport.Password.NotSet": "Oh no, you haven't set a password yet!",
   "Error.Passport.Username.NotFound": "Uhm, what's your name again?",
   "Error.Passport.Email.NotFound": "That email doesn't seem right",
-  "Welcome":"Welcome to the MEANS Seed Project",
-  "Hello %s, how are you today?": "Hello %s, how are you today?"
+  "Site.TopNav.Brand":"MEANS Seed Project",
+  "Site.TopNav.Home": "Home",
+  "Site.TopNav.Todo": "ToDo",
+  "Site.TopNav.Messages": "Messages",
+  "Site.TopNav.About": "About",
+  "Site.TopNav.Register": "Register",
+  "Site.TopNav.Login": "Login"
 }

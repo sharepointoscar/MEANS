@@ -1,4 +1,10 @@
 {
-	"Welcome": "Hola Bienvenido al Projecto MEANS! ",
-	"Hello": "Whatup? "
+	"Site.TopNav.Brand": "El Projecto de MEANS",
+	"Site.TopNav.Home": "Casa",
+	"Site.TopNav.Todo": "Lista Para Hacer",
+	"Site.TopNav.Messages": "Mensajes",
+	"Site.TopNav.About": "Acerca De",
+	"Site.TopNav.Register": "Registrate",
+	"Site.TopNav.Login": "Iniciar Sesión"
+
 }

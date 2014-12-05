@@ -43,6 +43,15 @@
           }
 
       </style>
+      <script>
+
+
+          // the top nav while user is signed-in
+          var topNavItems =  '<%= navItems %>';
+         topNavItems =  topNavItems.replace(/&quot;/g, '\\"').replace(/\\/g,'');
+         newNavitems = JSON.parse(topNavItems);
+         console.log(newNavitems);
+      </script>
   </head>
 
   <body>

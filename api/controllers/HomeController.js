@@ -4,16 +4,17 @@ module.exports = {
 
 	index: function(req, res) {
 
-		var navItems = [
-			{url: '/messages', cssClass: 'fa fa-comments', title: 'Messages'},
-            {url: '/todos', cssClass: 'fa fa-comments', title: 'Todos'}
+		var topNavigationItems = [{
+		navItem: {url: '/messages', cssClass:'fa fa-comments', title: res.i18n("Site.TopNav.Messages")},
+		navItem1: {url: '/todos', cssClass :'fa fa-comments', title: res.i18n("Site.TopNav.Todo")}
+	}];
 
 
-		];
+		console.log('SERVER SIDE TOPNAV, ', JSON.stringify(topNavigationItems,null,2));
 
 		res.view({
 			title: 'Home - MEANS',
-			navItems: navItems,
+			navItems: JSON.stringify(topNavigationItems),
 			currentUser: req.user,
             locales: sails.config.i18n.locales,
             layout: '/layouts/internal'

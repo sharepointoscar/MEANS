@@ -13,7 +13,7 @@
          </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li ng-repeat="navItem in navItems">
+                <li ng-repeat="navItem in navItems track by $index">
                     <a ng-hide="!currentUser" href="{{navItem.url}}"><i class="{{navItem.cssClass}}"></i>&nbsp; {{navItem.title}}</a>
                 </li>
                 <!-- only admin can view -->

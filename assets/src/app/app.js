@@ -43,5 +43,9 @@ angular.module( 'sailng', [
 })
 
 .controller( 'AppCtrl',['$scope', 'config', function AppCtrl ( $scope, config ) {
-	config.currentUser = window.currentUser;
+
+		config.currentUser = window.currentUser;
+
+		//the translated top nav
+		config.topNavigation = window.topNavItems;
 }]);
