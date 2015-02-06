@@ -1,5 +1,15 @@
 
-    <div class="col-lg-10">
+    <div class="col-lg-12">
+        <% if(errors.length >0) { %>
+        <div class="alert alert-dismissable alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <% _.each(errors,function(err){ %>
+
+            <%= err %><br>
+            <% }); %>
+
+        </div>
+        <% } %>
         <div class="container text-center">
             <form class="form-signin" action="/auth/local" method="post">
                 <h2>Sign in</h2>

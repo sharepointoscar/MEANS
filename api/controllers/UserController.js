@@ -14,7 +14,7 @@ module.exports = {
 	getOne: function(req, res) {
 		User.getOne(req.param('id'))
 		.spread(function(model) {
-                console.log('in getOne user', model)
+
 			res.json(model);
 		})
 		.fail(function(err) {

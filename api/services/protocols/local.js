@@ -28,32 +28,33 @@ exports.register = function (req, res, next) {
     , password = req.param('password')
     , first_name = req.param('first_name')
 
-    , role = req.param('role');
+    , role = req.param('role'),
+      errors = [];
 
 
   if (!email) {
-    req.flash('error', 'Error.Passport.Email.Missing');
-    return next(new Error('No email was entered.'));
+    errors.push( req.flash('error', req.__('Error.Passport.Email.Missing')));
   }
 
   if (!username) {
-    req.flash('error', 'Error.Passport.Username.Missing');
-    return next(new Error('No username was entered.'));
+    errors.push(  req.flash('error', req.__('Error.Passport.Username.Missing')));
   }
 
   if (!password) {
-    req.flash('error', 'Error.Passport.Password.Missing');
-    return next(new Error('No password was entered.'));
+    errors.push(  req.flash('error', req.__('Error.Passport.Password.Missing')));
   }
 
   if (!first_name) {
-    req.flash('error', 'Error.Passport.Email.Missing');
-    return next(new Error('No first name was entered.'));
+    errors.push(  req.flash('error', req.__('Error.Passport.FirstName.Missing')));
   }
-    if (!role) {
-        req.flash('error', 'Error.Passport.role.Missing');
-        return next(new Error('No role was entered.'));
-    }
+  if (!role) {
+        errors.push(  req.flash('error', req.__('Error.Passport.role.Missing')));
+  }
+
+  if(errors.length>0){
+    return next(errors);
+  }
+
   User.create({
     username : username,
     email    : email,
@@ -126,8 +127,8 @@ exports.connect = function (req, res, next) {
  * @param {Function} next
  */
 exports.login = function (req, identifier, password, next) {
-  var isEmail = validator.isEmail(identifier)
-    , query   = {};
+  var isEmail = validator.isEmail(identifier),
+       query   = {};
 
   if (isEmail) {
     query.email = identifier;
@@ -141,11 +142,10 @@ exports.login = function (req, identifier, password, next) {
 
     if (!user) {
       if (isEmail) {
-        req.flash('error', 'Error.Passport.Email.NotFound');
+        req.flash('error', req.__('Error.Passport.Email.NotFound'));
       } else {
-        req.flash('error', 'Error.Passport.Username.NotFound');
+        req.flash('error', req.__('Error.Passport.Username.NotFound'));
       }
-
       return next(null, false);
     }
 
@@ -158,15 +158,16 @@ exports.login = function (req, identifier, password, next) {
           if (err) return next(err);
 
           if (!res) {
-            req.flash('error', 'Error.Passport.Password.Wrong');
+            req.flash('error',req.__('Error.Passport.Password.Wrong'));
             return next(null, false);
           } else {
+            req.flash('error',req.__('Error.Passport.Password.Wrong'));
             return next(null, user);
           }
         });
       }
       else {
-        req.flash('error', 'Error.Passport.Password.NotSet');
+        req.flash('error',req.__( 'Error.Passport.Password.NotSet'));
         return next(null, false);
       }
     });

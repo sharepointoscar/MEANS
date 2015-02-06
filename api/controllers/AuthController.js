@@ -91,7 +91,8 @@ var AuthController = {
    * @param {Object} res
    */
   register: function (req, res) {
-    res.view({
+    res.view(
+      'auth/register', {
       errors: req.flash('error') ,
       layout:'/layouts/public'
     });
@@ -136,7 +137,10 @@ var AuthController = {
         // If an error was thrown, redirect the user to the login which should
         // take care of rendering the error messages.
         if (err) {
-          res.redirect('/login');
+
+          //redirect to the page the user came from.
+          res.redirect(req.headers.referer);
+          //res.redirect('/login');
         }
         // Upon successful login, send the user to the homepage were req.user
         // will available.
